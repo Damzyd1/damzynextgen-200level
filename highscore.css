@@ -1,0 +1,36 @@
+*{
+  box-sizing: border-box;
+  font-family: Courier New, monospace;
+}
+
+html{
+  background-color: #ccc;
+}
+#highScoresList{
+  list-style: none;
+  color: black;
+  padding-left: 0;
+  margin-bottom: 4rem;
+}
+.high-scores{
+  color: black;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.high-scores:hover{
+  cursor: pointer;
+  transform: scale(1.025);
+}
+
+.container{
+  background-color: white;
+}
+ul{
+  text-align: center;
+}
+@media only screen and (max-width: 768px){
+  /* Styles for tablets and smaller devices */
+  body{
+    font-size: 16px;
+  }
+}
