@@ -20,166 +20,278 @@ let availableQuestion = [];
 */
  let questions = [
     {
-        question: "What is the main philosophy of custody-based prisons?",
-        choice1: "Rehabilitation through therapy",
-        choice2: "Isolation and deterrence",
-        choice3: "Skill-building for societal reintegration",
-        choice4: "Restorative justice",
-        answer: "Isolation and deterrence"
-        // Rationale: Custody-based prisons are designed to isolate offenders from society and deter future crimes through strict confinement and punitive measures.
+        question: "Which of the following is NOT a Hudud offence in Islamic law?",
+        choice1: "Theft (Sariqa)",
+        choice2: "False accusation of adultery (Qadhf)",
+        choice3: "Negligence in financial contracts",
+        choice4: "Apostasy (Riddah)",
+        answer: "Negligence in financial contracts",
+        rationale: "Hudud crimes are fixed punishable offenses under Shariah. Negligence in financial contracts falls under civil liability, not Hudud."
     },
     {
-        question: "Which of the following is a key feature of rehabilitation-based prisons?",
-        choice1: "Focus on retributive punishment",
-        choice2: "Educational and vocational training programs",
-        choice3: "Increased solitary confinement",
-        choice4: "Strict surveillance and monitoring",
-        answer: "Educational and vocational training programs",
-         Rationale: "Rehabilitation-based prisons focus on equipping inmates with education and vocational skills to reintegrate successfully into society."
+        question: "What are the conditions for a theft (Sariqa) offense to warrant Hudud punishment?",
+        choice1: "The stolen item must be valuable and taken secretly",
+        choice2: "The thief must confess or be witnessed by two male Muslims",
+        choice3: "The stolen item must be kept in a secure place",
+        choice4: "All of the above",
+        answer: "All of the above",
+        rationale: "Islamic law requires strict conditions for applying Hudud punishments. Theft must meet criteria such as item value, security, and valid witness testimony."
     },
     {
-        question: "What is the primary goal of custody-based prisons?",
-        choice1: "Ensuring public safety through isolation",
-        choice2: "Reducing recidivism rates",
-        choice3: "Promoting psychological rehabilitation",
-        choice4: "Creating a community-based justice system",
-        answer: "Ensuring public safety through isolation",
-         Rationale: "Custody-based prisons emphasize isolating offenders to protect society from immediate harm and maintain public safety."
+        question: "A man is caught stealing a loaf of bread from a public market. Does this qualify for Hudud punishment?",
+        choice1: "Yes, amputation must be applied",
+        choice2: "No, because it is a minor theft",
+        choice3: "No, because Hudud does not apply when a person steals out of necessity",
+        choice4: "Yes, but only if the stolen item is returned",
+        answer: "No, because Hudud does not apply when a person steals out of necessity",
+        rationale: "Necessity (such as hunger) can exempt a person from Hudud punishment under Islamic law."
     },
     {
-        question: "Which of the following is an advantage of rehabilitation-based prisons?",
-        choice1: "Immediate reduction in crime rates",
-        choice2: "Lower cost of implementation",
-        choice3: "Long-term reduction in recidivism",
-        choice4: "Increased deterrence through stricter penalties",
-        answer: "Long-term reduction in recidivism",
-        Rationale: "Rehabilitation programs aim to address the root causes of crime, resulting in lower reoffending rates and societal benefits over time."
+        question: "How many male witnesses are required to prove an adultery (Zina) case in a Hudud court?",
+        choice1: "Two",
+        choice2: "Three",
+        choice3: "Four",
+        choice4: "One is enough",
+        answer: "Four",
+        rationale: "Four upright male Muslim witnesses must testify to having seen the act explicitly."
     },
     {
-        question: "What is a common disadvantage of custody-based prisons?",
-        choice1: "Overemphasis on prisoner reintegration",
-        choice2: "High costs and overcrowding",
-        choice3: "Excessive focus on vocational training",
-        choice4: "Limited focus on public safety",
-        answer: "High costs and overcrowding",
-        Rationale: "Custody-based prisons are often criticized for their high operational costs and overcrowding issues, which affect prison effectiveness."
+        question: "A woman confesses to committing adultery but later withdraws her confession. What happens under Islamic law?",
+        choice1: "She is still punished because of her first confession",
+        choice2: "She must swear an oath to prove innocence",
+        choice3: "The punishment is dropped because withdrawal of confession is allowed",
+        choice4: "She must bring four witnesses to prove innocence",
+        answer: "The punishment is dropped because withdrawal of confession is allowed",
+        rationale: "Confession must be voluntary and repeated four times; withdrawal before execution cancels the Hudud punishment."
     },
     {
-        question: "Which of the following best describes the philosophy of rehabilitation-based prisons?",
-        choice1: "Punishment and deterrence",
-        choice2: "Reform through skill development",
-        choice3: "Isolation of offenders from society",
-        choice4: "Maximizing security measures",
-        answer: "Reform through skill development",
-        Rationale: "Rehabilitation-based prisons focus on reforming offenders by addressing the root causes of criminal behavior, such as lack of skills or education."
+        question: "Which of the following is an acceptable proof for adultery in Hudud?",
+        choice1: "DNA evidence",
+        choice2: "Video footage",
+        choice3: "Four male eyewitnesses or a confession",
+        choice4: "Polygraph test",
+        answer: "Four male eyewitnesses or a confession",
+        rationale: "Islamic law requires strict evidence; modern technology does not replace the need for human testimony in Hudud cases."
     },
     {
-        question: "What is a major criticism of rehabilitation-based prisons?",
-        choice1: "They are too punitive in nature",
-        choice2: "They fail to provide public safety",
-        choice3: "They are resource-intensive and expensive",
-        choice4: "They discourage community engagement",
-        answer: "They are resource-intensive and expensive",
-        Rationale: "Rehabilitation-based systems require significant funding for training, education, and therapy programs, making them more expensive to sustain."
+        question: "What is the punishment for false accusation of adultery (Qadhf)?",
+        choice1: "Death penalty",
+        choice2: "80 lashes",
+        choice3: "Imprisonment for life",
+        choice4: "A fine and public apology",
+        answer: "80 lashes",
+        rationale: "If an accuser fails to provide four male eyewitnesses, they receive 80 lashes."
     },
     {
-        question: "Which of the following is NOT a goal of custody-based prisons?",
-        choice1: "Ensuring public safety",
-        choice2: "Deterring future crimes",
-        choice3: "Promoting societal reintegration",
-        choice4: "Maintaining strict discipline",
-        answer: "Promoting societal reintegration",
-        Rationale: "Custody-based prisons focus on containment, discipline, and deterrence, while societal reintegration is a goal of rehabilitation-based systems."
+        question: "What is the punishment for drinking alcohol (Shurb al-Khamr) under Hudud?",
+        choice1: "40–80 lashes",
+        choice2: "Death penalty",
+        choice3: "Community service",
+        choice4: "10 years imprisonment",
+        answer: "40–80 lashes",
+        rationale: "Classical Islamic law prescribes flogging, though the exact number varies based on the ruler’s discretion."
     },
     {
-        question: "How do custody-based prisons typically achieve their goals?",
-        choice1: "By reducing sentences for good behavior",
-        choice2: "Through strict surveillance and control",
-        choice3: "By offering community service alternatives",
-        choice4: "Through therapy and mental health programs",
-        answer: "Through strict surveillance and control",
-         Rationale: "Custody-based systems rely on tight surveillance and control to ensure inmates remain contained and deterred from reoffending."
+        question: "In a case of highway robbery (Hirabah), what determines whether the offender receives the death penalty?",
+        choice1: "If they caused death or severe harm during the robbery",
+        choice2: "If they stole a large sum of money",
+        choice3: "If they committed the crime alone",
+        choice4: "If they plead guilty in court",
+        answer: "If they caused death or severe harm during the robbery",
+        rationale: "Highway robbery punishments vary: execution applies if murder was involved."
     },
     {
-        question: "What is one advantage of custody-based prisons?",
-        choice1: "Quick isolation of offenders from society",
-        choice2: "Focus on reducing prison overcrowding",
-        choice3: "Emphasis on inmate rehabilitation",
-        choice4: "Provision of community-based services",
-        answer: "Quick isolation of offenders from society",
-        Rationale: "Custody-based systems provide immediate public safety by isolating offenders from the community."
+        question: "A Muslim renounces Islam publicly. What punishment does classical Islamic law prescribe for apostasy (Riddah)?",
+        choice1: "No punishment",
+        choice2: "Death penalty after a grace period for repentance",
+        choice3: "Imprisonment for life",
+        choice4: "Public flogging",
+        answer: "Death penalty after a grace period for repentance",
+        rationale: "Traditional Islamic jurisprudence prescribes death after a chance to repent, though modern interpretations vary."
     },
     {
-        question: "Which system is more likely to focus on reintegration programs?",
-        choice1: "Custody-based system",
-        choice2: "Rehabilitation-based system",
-        choice3: "Both systems equally",
-        choice4: "Neither system",
-        answer: "Rehabilitation-based system",
-         Rationale: "Rehabilitation-based prisons aim to prepare inmates for reentry into society by offering reintegration programs."
+        question: "What is the main difference between Hudud and Ta’zir offences?",
+        choice1: "Hudud punishments are fixed, while Ta'zir punishments are discretionary",
+        choice2: "Ta'zir offenses are only related to financial matters",
+        choice3: "Hudud can be forgiven by the victim, while Ta’zir cannot",
+        choice4: "Only Ta’zir offenses are punishable by death",
+        answer: "Hudud punishments are fixed, while Ta'zir punishments are discretionary",
+        rationale: "Hudud punishments are predetermined, while Ta'zir allows judicial discretion."
     },
     {
-        question: "What is the primary disadvantage of custody-based prisons in addressing long-term crime rates?",
-        choice1: "They provide insufficient security measures",
-        choice2: "They lack programs to address the root causes of crime",
-        choice3: "They are too lenient on offenders",
-        choice4: "They discourage public trust in law enforcement",
-        answer: "They lack programs to address the root causes of crime",
-        Rationale: "Custody-based prisons focus on punishment and isolation, often neglecting the factors that contribute to reoffending."
+        question: "Which of the following is a Ta’zir crime?",
+        choice1: "Murder",
+        choice2: "Slander without proof",
+        choice3: "Bribery",
+        choice4: "Both B and C",
+        answer: "Both B and C",
+        rationale: "Slander and bribery are not fixed Hudud crimes, so they fall under Ta'zir."
     },
     {
-        question: "How do rehabilitation-based prisons benefit society in the long term?",
-        choice1: "By increasing the length of prison sentences",
-        choice2: "By ensuring inmates remain isolated",
-        choice3: "By reducing recidivism rates",
-        choice4: "By prioritizing public safety over inmate rights",
-        answer: "By reducing recidivism rates",
-        Rationale: "Rehabilitation programs reduce reoffending by equipping inmates with skills, education, and mental health support."
+        question: "A man is caught spreading false rumors about another person. What punishment can a judge impose?",
+        choice1: "Death penalty",
+        choice2: "Imprisonment, flogging, or a fine, depending on the judge’s decision",
+        choice3: "Nothing, because it is not a crime",
+        choice4: "Public apology only",
+        answer: "Imprisonment, flogging, or a fine, depending on the judge’s decision",
+        rationale: "Ta'zir crimes allow for flexible sentencing depending on the harm caused."
     },
     {
-        question: "What is a notable difference between custody-based and rehabilitation-based prisons?",
-        choice1: "Focus on long-term crime reduction",
-        choice2: "Level of security measures in place",
-        choice3: "Approach to addressing offender behavior",
-        choice4: "Severity of punishment for offenders",
-        answer: "Approach to addressing offender behavior",
-        Rationale: "Custody-based systems focus on punishment, while rehabilitation-based systems focus on addressing and changing offender behavior."
+        question: "A business owner engages in price-fixing and fraud. What type of punishment applies?",
+        choice1: "Amputation of hand",
+        choice2: "Ta’zir punishment such as fines, imprisonment, or community service",
+        choice3: "80 lashes",
+        choice4: "Execution",
+        answer: "Ta’zir punishment such as fines, imprisonment, or community service",
+        rationale: "Financial misconduct falls under Ta’zir, allowing for judge-determined penalties."
     },
     {
-        question: "Why might a government opt for rehabilitation-based prisons over custody-based prisons?",
-        choice1: "To immediately reduce crime rates",
-        choice2: "To address systemic issues leading to crime",
-        choice3: "To save costs on prison operations",
-        choice4: "To increase the deterrent effect of incarceration",
-        answer: "To address systemic issues leading to crime",
-        Rationale: "Rehabilitation-based prisons aim to address societal and individual factors, such as poverty or lack of education, that contribute to criminal activity."
+        question: "If a person is caught spying against the state, what type of punishment applies?",
+        choice1: "Hudud",
+        choice2: "Ta'zir",
+        choice3: "Qisas",
+        choice4: "Diyah",
+        answer: "Ta'zir",
+        rationale: "Spying is not a fixed Hudud crime, so it falls under Ta’zir."
     },
     {
-        question: "Which system is more effective at reducing prison overcrowding in the short term?",
-        choice1: "Custody-based system",
-        choice2: "Rehabilitation-based system",
-        choice3: "Both systems equally",
-        choice4: "Neither system",
-        answer: "Custody-based system",
-        Rationale: "Custody-based systems focus on removing offenders from society, often leading to overcrowded prisons without reducing crime rates long-term."
+        question: "The ruler or judge has the right to determine Ta’zir punishments based on what?",
+        choice1: "Personal bias",
+        choice2: "Circumstances of the crime, intent, and harm caused",
+        choice3: "Strict interpretation of Hudud laws",
+        choice4: "Public opinion",
+        answer: "Circumstances of the crime, intent, and harm caused",
+        rationale: "Islamic judges assess factors such as intent and harm when determining Ta’zir punishments."
     },
     {
-        question: "Which system offers therapy as a core part of its approach?",
-        choice1: "Custody-based system",
-        choice2: "Rehabilitation-based system",
-        choice3: "Both systems equally",
-        choice4: "Neither system",
-        answer: "Rehabilitation-based system",
-        Rationale: "Rehabilitation-based prisons emphasize therapy and mental health support to address underlying issues contributing to criminal behavior."
+        question: "Can Ta’zir punishments include exile?",
+        choice1: "Yes",
+        choice2: "No",
+        answer: "Yes",
+        rationale: "Exile is a discretionary punishment under Ta’zir."
     },
     {
-        question: "What is an advantage of rehabilitation-based systems in terms of offender outcomes?",
-        choice1: "Reinforces punitive justice",
-        choice2: "Improves reentry preparedness",
-        choice3: "Ensures offenders are physically secured",
-        choice4: "Reduces the need for judicial oversight",
-        answer: "Improves reentry preparedness",
-        Rationale: "Rehabilitation programs focus on preparing inmates for a productive and law-abiding life post-incarceration."
+        question: "Can a Ta’zir offender be pardoned?",
+        choice1: "Yes, by the judge",
+        choice2: "No, only Hudud offenses can be pardoned",
+        answer: "Yes, by the judge",
+        rationale: "Ta’zir punishments can be modified or pardoned by the judge."
+    },
+    {
+        question: "What is the maximum number of lashes for a Ta’zir punishment?",
+        choice1: "100",
+        choice2: "40",
+        choice3: "There is no fixed number",
+        answer: "There is no fixed number",
+        rationale: "Unlike Hudud, Ta'zir allows for judicial discretion on punishment severity."
+    },
+    {
+        question: "What is the primary source of Islamic law?",
+        choice1: "Qur'an and Hadith",
+        choice2: "Sunna and Ijma",
+        choice3: "Qiyas and Ijtihad",
+        choice4: "Fiqh and Shariah",
+        answer: "Qur'an and Hadith",
+        rationale: "Islamic law is primarily derived from the Qur'an and Hadith, which are the fundamental religious texts of Islam."
+    },
+    {
+        question: "What is the purpose of punishment in Islam?",
+        choice1: "To inflict harm on the offender",
+        choice2: "To deter others from committing similar offenses",
+        choice3: "To reform the offender and maintain social order",
+        choice4: "To exact revenge on the offender",
+        answer: "To reform the offender and maintain social order",
+        rationale: "Punishment in Islam aims at reformation and maintaining social harmony rather than mere retaliation."
+    },
+    {
+        question: "What is the definition of crime in Islam?",
+        choice1: "An act that harms another person or property",
+        choice2: "An act that goes against the commands of Allah",
+        choice3: "An act that is prohibited by the Shariah",
+        choice4: "An act that is punishable by the state",
+        answer: "An act that is prohibited by the Shariah",
+        rationale: "Crime in Islam is defined as any act prohibited by Shariah, which governs moral and legal conduct."
+    },
+    {
+        question: "What is the primary object of punishment in Islam?",
+        choice1: "To punish the offender",
+        choice2: "To deter others from committing similar offenses",
+        choice3: "To reform the offender and maintain social order",
+        choice4: "To exact revenge on the offender",
+        answer: "To reform the offender and maintain social order",
+        rationale: "The goal of punishment in Islam is to rehabilitate offenders and preserve societal harmony."
+    },
+    {
+        question: "What is the definition of tort in Islam?",
+        choice1: "A civil wrong that causes harm to another person or property",
+        choice2: "A criminal offense that is punishable by the state",
+        choice3: "A moral wrong that goes against the commands of Allah",
+        choice4: "A breach of contract that causes harm to another person",
+        answer: "A civil wrong that causes harm to another person or property",
+        rationale: "In Islamic law, torts refer to civil wrongs that result in harm to individuals or property."
+    },
+    {
+        question: "What is the punishment for theft in Islam?",
+        choice1: "Amputation of the hand",
+        choice2: "Imprisonment for a period of time",
+        choice3: "Payment of a fine",
+        choice4: "Flogging",
+        answer: "Amputation of the hand",
+        rationale: "According to Islamic law, theft is a Hudud offense punishable by amputation under specific conditions."
+    },
+    {
+        question: "What is the main difference between tort and crime in Islam?",
+        choice1: "Tort is a civil wrong, while crime is a criminal offense",
+        choice2: "Tort is punishable by the state, while crime is not",
+        choice3: "Tort is a moral wrong, while crime is not",
+        choice4: "Tort is a breach of contract, while crime is not",
+        answer: "Tort is a civil wrong, while crime is a criminal offense",
+        rationale: "Torts in Islam concern private rights and compensation, while crimes involve offenses against the state or religion."
+    },
+    {
+        question: "What is the condition for liability in tort in Islam?",
+        choice1: "Intent to harm",
+        choice2: "Negligence",
+        choice3: "Causation",
+        choice4: "All of the above",
+        answer: "All of the above",
+        rationale: "Islamic tort liability may arise from intentional harm, negligence, or causation leading to damage."
+    },
+    {
+        question: "What is the burden of proof in Islamic law?",
+        choice1: "The plaintiff must prove their case beyond a reasonable doubt",
+        choice2: "The defendant must prove their innocence beyond a reasonable doubt",
+        choice3: "The plaintiff must prove their case by a preponderance of the evidence",
+        choice4: "The defendant must prove their innocence by a preponderance of the evidence",
+        answer: "The plaintiff must prove their case beyond a reasonable doubt",
+        rationale: "In Islamic law, the plaintiff bears the burden of proof, and guilt must be established beyond a reasonable doubt."
+    },
+    {
+        question: "What is the punishment for murder in Islam?",
+        choice1: "Death penalty",
+        choice2: "Imprisonment for life",
+        choice3: "Payment of diyah (blood money)",
+        choice4: "All of the above",
+        answer: "All of the above",
+        rationale: "Islamic law prescribes various penalties for murder, including capital punishment, imprisonment, or blood money, depending on circumstances."
+    },
+    {
+        question: "What is the purpose of the concept of 'maqasid al-shariah' in Islamic law?",
+        choice1: "To punish offenders",
+        choice2: "To protect the rights of victims",
+        choice3: "To promote the public interest",
+        choice4: "To achieve the objectives of the Shariah",
+        answer: "To achieve the objectives of the Shariah",
+        rationale: "'Maqasid al-shariah' refers to the higher objectives of Shariah, which include justice, public welfare, and moral integrity."
+    },
+    {
+        question: "What is the concept of 'tawbah' in Islamic law?",
+        choice1: "Repentance",
+        choice2: "Punishment",
+        choice3: "Reward",
+        choice4: "Forgiveness",
+        answer: "Repentance",
+        rationale: "'Tawbah' is the Islamic principle of repentance, allowing individuals to seek forgiveness for sins through sincere remorse and reform."
     }
 ];
 
