@@ -642,7 +642,7 @@ function displayRemark(remark){
     remarkElement.style.opacity = 0;
   }
 }
-let durationInMinutes = 15;
+let durationInMinutes = 27;
 let timeInSeconds = durationInMinutes * 60;
 const timerDisplay = document.getElementById("timer");
 
