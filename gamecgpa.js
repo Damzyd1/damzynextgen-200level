@@ -11,7 +11,7 @@ document.addEventListener("keydown", e => {
 
 
 
-const topic = "ISL: <br> Exam Simulation";
+const topic = " <br> Exam Simulation";
 const topicId = document.getElementById("topic");
 topicId.innerHTML = topic;
 setTimeout(disappear, 10000);
@@ -36,282 +36,493 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestion = [];
 let questions = [
-    {
-        question: "Which of the following is NOT a Hudud offence in Islamic law?",
-        choice1: "Theft (Sariqa)",
-        choice2: "False accusation of adultery (Qadhf)",
-        choice3: "Negligence in financial contracts",
-        choice4: "Apostasy (Riddah)",
-        answer: 3,
-        rationale: "Hudud crimes are fixed punishable offenses under Shariah. Negligence in financial contracts falls under civil liability, not Hudud."
-    },
-    {
-        question: "What are the conditions for a theft (Sariqa) offense to warrant Hudud punishment?",
-        choice1: "The stolen item must be valuable and taken secretly",
-        choice2: "The thief must confess or be witnessed by two male Muslims",
-        choice3: "The stolen item must be kept in a secure place",
-        choice4: "All of the above",
-        answer: 4,
-        rationale: "Islamic law requires strict conditions for applying Hudud punishments. Theft must meet criteria such as item value, security, and valid witness testimony."
-    },
-    {
-        question: "A man is caught stealing a loaf of bread from a public market. Does this qualify for Hudud punishment?",
-        choice1: "Yes, amputation must be applied",
-        choice2: "No, because it is a minor theft",
-        choice3: "No, because Hudud does not apply when a person steals out of necessity",
-        choice4: "Yes, but only if the stolen item is returned",
-        answer: 3,
-        rationale: "Necessity (such as hunger) can exempt a person from Hudud punishment under Islamic law."
-    },
-    {
-        question: "How many male witnesses are required to prove an adultery (Zina) case in a Hudud court?",
-        choice1: "Two",
-        choice2: "Three",
-        choice3: "Four",
-        choice4: "One is enough",
-        answer: 3,
-        rationale: "Four upright male Muslim witnesses must testify to having seen the act explicitly."
-    },
-    {
-        question: "A woman confesses to committing adultery but later withdraws her confession. What happens under Islamic law?",
-        choice1: "She is still punished because of her first confession",
-        choice2: "She must swear an oath to prove innocence",
-        choice3: "The punishment is dropped because withdrawal of confession is allowed",
-        choice4: "She must bring four witnesses to prove innocence",
-        answer: 3,
-        rationale: "Confession must be voluntary and repeated four times; withdrawal before execution cancels the Hudud punishment."
-    },
-    {
-        question: "Which of the following is an acceptable proof for adultery in Hudud?",
-        choice1: "DNA evidence",
-        choice2: "Video footage",
-        choice3: "Four male eyewitnesses or a confession",
-        choice4: "Polygraph test",
-        answer: 3,
-        rationale: "Islamic law requires strict evidence; modern technology does not replace the need for human testimony in Hudud cases."
-    },
-    {
-        question: "What is the punishment for false accusation of adultery (Qadhf)?",
-        choice1: "Death penalty",
-        choice2: "80 lashes",
-        choice3: "Imprisonment for life",
-        choice4: "A fine and public apology",
-        answer: 2,
-        rationale: "If an accuser fails to provide four male eyewitnesses, they receive 80 lashes."
-    },
-    {
-        question: "What is the punishment for drinking alcohol (Shurb al-Khamr) under Hudud?",
-        choice1: "40–80 lashes",
-        choice2: "Death penalty",
-        choice3: "Community service",
-        choice4: "10 years imprisonment",
-        answer: 1,
-        rationale: "Classical Islamic law prescribes flogging, though the exact number varies based on the ruler’s discretion."
-    },
-    {
-        question: "In a case of highway robbery (Hirabah), what determines whether the offender receives the death penalty?",
-        choice1: "If they caused death or severe harm during the robbery",
-        choice2: "If they stole a large sum of money",
-        choice3: "If they committed the crime alone",
-        choice4: "If they plead guilty in court",
-        answer: 1,
-        rationale: "Highway robbery punishments vary: execution applies if murder was involved."
-    },
-    {
-        question: "A Muslim renounces Islam publicly. What punishment does classical Islamic law prescribe for apostasy (Riddah)?",
-        choice1: "No punishment",
-        choice2: "Death penalty after a grace period for repentance",
-        choice3: "Imprisonment for life",
-        choice4: "Public flogging",
-        answer: 2,
-        rationale: "Traditional Islamic jurisprudence prescribes death after a chance to repent, though modern interpretations vary."
-    },
-    {
-        question: "What is the main difference between Hudud and Ta’zir offences?",
-        choice1: "Hudud punishments are fixed, while Ta'zir punishments are discretionary",
-        choice2: "Ta'zir offenses are only related to financial matters",
-        choice3: "Hudud can be forgiven by the victim, while Ta’zir cannot",
-        choice4: "Only Ta’zir offenses are punishable by death",
-        answer: 1,
-        rationale: "Hudud punishments are predetermined, while Ta'zir allows judicial discretion."
-    },
-    {
-        question: "Which of the following is a Ta’zir crime?",
-        choice1: "Murder",
-        choice2: "Slander without proof",
-        choice3: "Bribery",
-        choice4: "Both B and C",
-        answer: 4,
-        rationale: "Slander and bribery are not fixed Hudud crimes, so they fall under Ta'zir."
-    },
-    {
-        question: "A man is caught spreading false rumors about another person. What punishment can a judge impose?",
-        choice1: "Death penalty",
-        choice2: "Imprisonment, flogging, or a fine, depending on the judge’s decision",
-        choice3: "Nothing, because it is not a crime",
-        choice4: "Public apology only",
-        answer: 2,
-        rationale: "Ta'zir crimes allow for flexible sentencing depending on the harm caused."
-    },
-    {
-        question: "A business owner engages in price-fixing and fraud. What type of punishment applies?",
-        choice1: "Amputation of hand",
-        choice2: "Ta’zir punishment such as fines, imprisonment, or community service",
-        choice3: "80 lashes",
-        choice4: "Execution",
-        answer: 2,
-        rationale: "Financial misconduct falls under Ta’zir, allowing for judge-determined penalties."
-    },
-    {
-        question: "If a person is caught spying against the state, what type of punishment applies?",
-        choice1: "Hudud",
-        choice2: "Ta'zir",
-        choice3: "Qisas",
-        choice4: "Diyah",
-        answer: 2,
-        rationale: "Spying is not a fixed Hudud crime, so it falls under Ta’zir."
-    },
-    {
-        question: "The ruler or judge has the right to determine Ta’zir punishments based on what?",
-        choice1: "Personal bias",
-        choice2: "Circumstances of the crime, intent, and harm caused",
-        choice3: "Strict interpretation of Hudud laws",
-        choice4: "Public opinion",
-        answer: 2,
-        rationale: "Islamic judges assess factors such as intent and harm when determining Ta’zir punishments."
-    },
-    {
-        question: "Can Ta’zir punishments include exile?",
-        choice1: "Yes",
-        choice2: "No",
-        answer: 1,
-        rationale: "Exile is a discretionary punishment under Ta’zir."
-    },
-    {
-        question: "Can a Ta’zir offender be pardoned?",
-        choice1: "Yes, by the judge",
-        choice2: "No, only Hudud offenses can be pardoned",
-        answer: 1,
-        rationale: "Ta’zir punishments can be modified or pardoned by the judge."
-    },
-    {
-        question: "What is the maximum number of lashes for a Ta’zir punishment?",
-        choice1: "100",
-        choice2: "40",
-        choice3: "There is no fixed number",
-        answer: 3,
-        rationale: "Unlike Hudud, Ta'zir allows for judicial discretion on punishment severity."
-    },
-    {
-        question: "What is the primary source of Islamic law?",
-        choice1: "Qur'an and Hadith",
-        choice2: "Sunna and Ijma",
-        choice3: "Qiyas and Ijtihad",
-        choice4: "Fiqh and Shariah",
-        answer: 1,
-        rationale: "Islamic law is primarily derived from the Qur'an and Hadith, which are the fundamental religious texts of Islam."
-    },
-    {
-        question: "What is the purpose of punishment in Islam?",
-        choice1: "To inflict harm on the offender",
-        choice2: "To deter others from committing similar offenses",
-        choice3: "To reform the offender and maintain social order",
-        choice4: "To exact revenge on the offender",
-        answer: 3,
-        rationale: "Punishment in Islam aims at reformation and maintaining social harmony rather than mere retaliation."
-    },
-    {
-        question: "What is the definition of crime in Islam?",
-        choice1: "An act that harms another person or property",
-        choice2: "An act that goes against the commands of Allah",
-        choice3: "An act that is prohibited by the Shariah",
-        choice4: "An act that is punishable by the state",
-        answer: 3,
-        rationale: "Crime in Islam is defined as any act prohibited by Shariah, which governs moral and legal conduct."
-    },
-    {
-        question: "What is the primary object of punishment in Islam?",
-        choice1: "To punish the offender",
-        choice2: "To deter others from committing similar offenses",
-        choice3: "To reform the offender and maintain social order",
-        choice4: "To exact revenge on the offender",
-        answer: 3,
-        rationale: "The goal of punishment in Islam is to rehabilitate offenders and preserve societal harmony."
-    },
-    {
-        question: "What is the definition of tort in Islam?",
-        choice1: "A civil wrong that causes harm to another person or property",
-        choice2: "A criminal offense that is punishable by the state",
-        choice3: "A moral wrong that goes against the commands of Allah",
-        choice4: "A breach of contract that causes harm to another person",
-        answer: 1,
-        rationale: "In Islamic law, torts refer to civil wrongs that result in harm to individuals or property."
-    },
-    {
-        question: "What is the punishment for theft in Islam?",
-        choice1: "Amputation of the hand",
-        choice2: "Imprisonment for a period of time",
-        choice3: "Payment of a fine",
-        choice4: "Flogging",
-        answer: 1,
-        rationale: "According to Islamic law, theft is a Hudud offense punishable by amputation under specific conditions."
-    },
-    {
-        question: "What is the main difference between tort and crime in Islam?",
-        choice1: "Tort is a civil wrong, while crime is a criminal offense",
-        choice2: "Tort is punishable by the state, while crime is not",
-        choice3: "Tort is a moral wrong, while crime is not",
-        choice4: "Tort is a breach of contract, while crime is not",
-        answer: 1,
-        rationale: "Torts in Islam concern private rights and compensation, while crimes involve offenses against the state or religion."
-    },
-    {
-        question: "What is the condition for liability in tort in Islam?",
-        choice1: "Intent to harm",
-        choice2: "Negligence",
-        choice3: "Causation",
-        choice4: "All of the above",
-        answer: 4,
-        rationale: "Islamic tort liability may arise from intentional harm, negligence, or causation leading to damage."
-    },
-    {
-        question: "What is the burden of proof in Islamic law?",
-        choice1: "The plaintiff must prove their case beyond a reasonable doubt",
-        choice2: "The defendant must prove their innocence beyond a reasonable doubt",
-        choice3: "The plaintiff must prove their case by a preponderance of the evidence",
-        choice4: "The defendant must prove their innocence by a preponderance of the evidence",
-        answer: 1,
-        rationale: "In Islamic law, the plaintiff bears the burden of proof, and guilt must be established beyond a reasonable doubt."
-    },
-    {
-        question: "What is the punishment for murder in Islam?",
-        choice1: "Death penalty",
-        choice2: "Imprisonment for life",
-        choice3: "Payment of diyah (blood money)",
-        choice4: "All of the above",
-        answer: 4,
-        rationale: "Islamic law prescribes various penalties for murder, including capital punishment, imprisonment, or blood money, depending on circumstances."
-    },
-    {
-        question: "What is the purpose of the concept of 'maqasid al-shariah' in Islamic law?",
-        choice1: "To punish offenders",
-        choice2: "To protect the rights of victims",
-        choice3: "To promote the public interest",
-        choice4: "To achieve the objectives of the Shariah",
-        answer: 4,
-        rationale: "'Maqasid al-shariah' refers to the higher objectives of Shariah, which include justice, public welfare, and moral integrity."
-    },
-    {
-        question: "What is the concept of 'tawbah' in Islamic law?",
-        choice1: "Repentance",
-        choice2: "Punishment",
-        choice3: "Reward",
-        choice4: "Forgiveness",
-        answer: 1,
-        rationale: "'Tawbah' is the Islamic principle of repentance, allowing individuals to seek forgiveness for sins through sincere remorse and reform."
-    }
+  {
+    question: "What is the formula for calculating the mean?",
+    choice1: "(Σx) / (n-1)",
+    choice2: "(Σx) / (n+1)",
+    choice3: "(Σx) / 2",
+    choice4: "(Σx) / n",
+    answer: 4
+  },
+  {
+    question : "What is the formula for calculating the median for an even-numbered dataset?",
+    choice1: "(n+1)/2",
+    choice2: "(n/2)th term",
+    choice3: "((n/2)th term - ((n/2)+1)th term) / 2",
+    choice4: "((n/2)th term + ((n/2)+1)th term) / 2",
+    answer: 4
+  },
+  {
+    question: "What is the formula for calculating the mode?",
+    choice1: "Most frequently occurring value - 1",
+    choice2: "Most frequently occurring value",
+    choice3: "Most frequently occurring value + 1",
+    choice4: "(Σx) / n",
+    answer: 2
+  },
+  {
+    question: "What is the formula for calculating the variance?",
+    choice1: "Σ(x-μ)^2 / (n-1)",
+    choice2: "Σ(x-μ)^2 / (n+1)",
+    choice3: "Σ(x-μ)^2 / 2",
+    choice4: "Σ(x-μ)^2 / n",
+    answer: 4
+  },
+  {
+    question: "What is the formula for calculating the standard deviation?",
+    choice1: "√(Σ(x-μ)^2 / (n-1))",
+    choice2: "√(Σ(x-μ)^2 / (n+1))",
+    choice3: "√(Σ(x-μ)^2 / 2)",
+    choice4: "√(Σ(x-μ)^2 / n)",
+    answer: 4
+ },
+  {
+    question: "What is the formula for the regression line?",
+    choice1: "y = a + bx",
+    choice2: "y = a - bx",
+    choice3: "y = a * bx",
+    choice4: "y = a / bx",
+    answer: 1
+  },
+  {
+    question : "What is the formula for the coefficient of determination (R^2)?",
+    choice1: "R^2 = 1 - (Σ(yi - ŷi)^2 / Σ(yi - μy)^2)",
+    choice2: "R^2 = 1 + (Σ(yi - ŷi)^2 / Σ(yi - μy)^2)",
+    choice3: "R^2 = 1 - (Σ(yi - ŷi)^2 / Σ(yi + μy)^2)",
+    choice4: "R^2 = 1 + (Σ(yi - ŷi)^2 / Σ(yi + μy)^2)",
+    answer: 1
+  },
+  {
+    question : "What is the formula for the standard error (SE)?",
+    choice1: "SE = σ / (√n - 1)",
+    choice2: "SE = σ / (√n + 1)",
+    choice3: "SE = σ / 2",
+    choice4: "SE = σ / √n",
+    answer: 4
+  },
+  {
+    question: "What is the formula for a confidence interval (CI)?",
+    choice1: "CI = x̄ ± (Z * (σ / (√n - 1)))",
+    choice2: "CI = x̄ ± (Z * (σ / (√n + 1)))",
+    choice3: "CI = x̄ ± (Z * (σ / 2))",
+    choice4: "CI = x̄ ± (Z * (σ / √n))",
+    answer: 4
+  },
+  {
+    question:"What percentage of the data does the mean represent?",
+    choice1: "25%",
+    choice2: "50%",
+    choice3: "65%",
+    choice4: "100%",
+    answer: 4
+  },
+  {
+    question:"What percentage of the data is below the median in an even-numbered dataset?",
+    choice1: "25%",
+    choice2: "40%",
+    choice3: "50%",
+    choice4: "75%",
+    answer: 3
+  },
+  {
+    question:"What percentage of the data must be the same value to be considered the mode?",
+    choice1: "25%",
+    choice2: "50%",
+    choice3: "65%",
+    choice4: "100%",
+    answer: 2
+  },
+  {
+    question:"What percentage of the data is explained by the variance?",
+    choice1: "25%",
+    choice2: "50%",
+    choice3: "75%",
+    choice4: "100%",
+    answer: 4
+  },
+  {
+    question:"What percentage of the data falls within 1 standard deviation of the mean?",
+    choice1: "50%",
+    choice2: "65%" ,
+    choice3: "75%",
+    choice4: "95%",
+    answer: 4
+  },
+  {
+    question: "What percentage of the variation in one variable is explained by the correlation with another variable?",
+    choice1: "25%",
+    choice2: "50%",
+    choice3: "65%",
+    choice4: "100%",
+    answer: 4
+  },
+  {
+    question: "What percentage of the data is predicted by the regression line?",
+    choice1: "25%",
+    choice2: "50%",
+    choice3: "65%",
+    choice4: "100%",
+    answer: 4
+  },
+  {
+    question: "What percentage of the data's spread is accounted for by the standard error?",
+    choice1: "25%",
+    choice2: "50%",
+    choice3: "65%",
+    choice4: "100%",
+    answer: 1
+  },
+  {
+    question: "What percentage of the data is likely to contain the true population parameter?",
+    choice1: "50%",
+    choice2: "65%",
+    choice3: "75%",
+    choice4: "95%",
+    answer: 4
+  },
+  {
+  question: "What is the primary purpose of social statistics?",
+  choice1: "To collect data",
+  choice2: "To analyze data",
+  choice3: "To describe and analyze social phenomena",
+  choice4: "To predict future events",
+  answer: 3,
+  rationale: "Social statistics aims to describe and analyze social phenomena."
+  },
+  {
+  question: "Which of the following is a fundamental assumption in social statistics?",
+  choice1: "Data should be collected from a sample",
+  choice2: "Data should be analyzed using statistical software",
+  choice3: "Data should be accurate and reliable",
+  choice4: "Data should be collected from a population",
+  answer: 3,
+  rationale: "Accurate and reliable data is essential in social statistics."
+  },
+  {
+  question: "What is the term for a group of people that share common characteristics?",
+  choice1: "Population",
+  choice2: "Sample",
+  choice3: "Census",
+  choice4: "Cluster",
+  answer: 1,
+  rationale: "A population is a group of people that share common characteristics."
+  },
+  {
+  question: "What is the term for a subset of a population?",
+  choice1: "Population",
+  choice2: "Sample",
+  choice3: "Census",
+  choice4: "Cluster",
+  answer: 2,
+  rationale: "A sample is a subset of a population."
+  },
+  {
+  question: "What type of sampling involves selecting every member of a population?",
+  choice1: "Probability sampling",
+  choice2: "Non-probability sampling",
+  choice3: "Cluster sampling",
+  choice4: "Census",
+  answer: 4,
+  rationale: "A census involves selecting every member of a population."
+  },
+  {
+  question: "What type of scale measures variables in terms of rank or order?",
+  choice1: "Nominal scale",
+  choice2: "Ordinal scale",
+  choice3: "Interval scale",
+  choice4: "Ratio scale",
+  answer: 2,
+  rationale: "An ordinal scale measures variables in terms of rank or order."
+  },
+  {
+  question: "What type of scale measures variables in terms of equal intervals?",
+  choice1: "Nominal scale",
+  choice2: "Ordinal scale",
+  choice3: "Interval scale",
+  choice4: "Ratio scale",
+  answer: 3,
+  rationale: "An interval scale measures variables in terms of equal intervals."
+  },
+  {
+  question: "What type of scale measures variables in terms of a true zero point?",
+  choice1: "Nominal scale",
+  choice2: "Ordinal scale",
+  choice3: "Interval scale",
+  choice4: "Ratio scale",
+  answer: 4,
+  rationale: "A ratio scale measures variables in terms of a true zero point."
+  },
+  {
+  question: "What is the term for a measure of central tendency that is sensitive to extreme values?",
+  choice1: "Mean",
+  choice2: "Median",
+  choice3: "Mode",
+  choice4: "Standard deviation",
+  answer: 1,
+  rationale: "The mean is a measure of central tendency that is sensitive to extreme values."
+  },
+  {
+  question: "What is the term for a measure of variability that is sensitive to extreme values?",
+  choice1: "Range",
+  choice2: "Variance",
+  choice3: "Standard deviation",
+  choice4: "Skewness",
+  answer: 3,
+  rationale: "The standard deviation is a measure of variability that is sensitive to extreme values."
+  },
+  {
+  question: "What is the term for a measure of the asymmetry of a distribution?",
+  choice1: "Skewness",
+  choice2: "Kurtosis",
+  choice3: "Variance",
+  choice4: "Standard deviation",
+  answer: 1,
+  rationale: "Skewness is a measure of the asymmetry of a distribution."
+  },
+  {
+  question: "What is the term for a measure of the flatness or peakedness of a distribution?",
+  choice1: "Skewness",
+  choice2: "Kurtosis",
+  choice3: "Variance",
+  choice4: "Standard deviation",
+  answer: 2,
+  rationale: "Kurtosis is a measure of the flatness or peakedness of a distribution."
+  },
+  {
+  question: "What type of statistical test is used to determine if there is a significant association between two categorical variables?",
+  choice1: "t-test",
+  choice2: "ANOVA",
+  choice3: "Regression analysis",
+  choice4: "Chi-square test",
+  answer: 4,
+  rationale: "The chi-square test is used to determine if there is a significant association between two categorical variables."
+  },
+  {
+  question: "What is the term for a type of non-probability sampling that involves selecting participants based on convenience?",
+  choice1: "Convenience sampling",
+  choice2: "Purposive sampling",
+  choice3: "Quota sampling",
+  choice4: "Snowball sampling",
+  answer: 1,
+  rationale: "Convenience sampling involves selecting participants based on convenience."
+  },
+  {
+  question: "What is the primary purpose of social statistics?",
+  choice1: "To collect data",
+  choice2: "To analyze data",
+  choice3: "To describe and analyze social phenomena",
+  choice4: "To predict future events",
+  answer: 3,
+  rationale: "Social statistics aims to describe and analyze social phenomena."
+  },
+  {
+  question: "Which of the following is a fundamental assumption in social statistics?",
+  choice1: "Data should be collected from a sample",
+  choice2: "Data should be analyzed using statistical software",
+  choice3: "Data should be accurate and reliable",
+  choice4: "Data should be collected from a population",
+  answer: 3,
+  rationale: "Accurate and reliable data is essential in social statistics."
+  },
+  {
+  question: "What is the term for a group of people that share common characteristics?",
+  choice1: "Population",
+  choice2: "Sample",
+  choice3: "Census",
+  choice4: "Cluster",
+  answer: 1,
+  rationale: "A population is a group of people that share common characteristics."
+  },
+  {
+  question: "What type of sampling involves selecting every member of a population?",
+  choice1: "Probability sampling",
+  choice2: "Non-probability sampling",
+  choice3: "Cluster sampling",
+  choice4: "Census",
+  answer: 4,
+  rationale: "A census involves selecting every member of a population."
+  },
+  {
+  question: "What type of scale measures variables in terms of rank or order?",
+  choice1: "Nominal scale",
+  choice2: "Ordinal scale",
+  choice3: "Interval scale",
+  choice4: "Ratio scale",
+  answer: 2,
+  rationale: "An ordinal scale measures variables in terms of rank or order."
+  },
+  {
+  question: "What type of scale measures variables in terms of equal intervals?",
+  choice1: "Nominal scale",
+  choice2: "Ordinal scale",
+  choice3: "Interval scale",
+  choice4: "Ratio scale",
+  answer: 3,
+  rationale: "An interval scale measures variables in terms of equal intervals."
+  },
+  {
+  question: "What type of scale measures variables in terms of a true zero point?",
+  choice1: "Nominal scale",
+  choice2: "Ordinal scale",
+  choice3: "Interval scale",
+  choice4: "Ratio scale",
+  answer: 4,
+  rationale: "A ratio scale measures variables in terms of a true zero point."
+  },
+  {
+  question: "What is the term for a measure of central tendency that is sensitive to extreme values?",
+  choice1: "Mean",
+  choice2: "Median",
+  choice3: "Mode",
+  choice4: "Standard deviation",
+  answer: 1,
+  rationale: "The mean is sensitive to extreme values."
+  },
+  {
+  question: "What is the term for a measure of variability that is sensitive to extreme values?",
+  choice1: "Range",
+  choice2: "Variance",
+  choice3: "Standard deviation",
+  choice4: "Skewness",
+  answer: 3,
+  rationale: "The standard deviation is sensitive to extreme values."
+  },
+  {
+  question: "What is the term for a measure of the asymmetry of a distribution?",
+  choice1: "Skewness",
+  choice2: "Kurtosis",
+  choice3: "Variance",
+  choice4: "Standard deviation",
+  answer: 1,
+  rationale: "Skewness measures the asymmetry of a distribution."
+  },
+  {
+  question: "What is the term for a measure of the flatness or peakedness of a distribution?",
+  choice1: "Skewness",
+  choice2: "Kurtosis",
+  choice3: "Variance",
+  choice4: "Standard deviation",
+  answer: 2,
+  rationale: "Kurtosis measures the flatness or peakedness of a distribution."
+  },
+  {
+  question: "What type of statistical test is used to determine if there is a significant association between two categorical variables?",
+  choice1: "t-test",
+  choice2: "ANOVA",
+  choice3: "Regression analysis",
+  choice4: "Chi-square test",
+  answer: 4,
+  rationale: "The Chi-square test is used to determine if there is a significant association between two categorical variables."
+  },
+  {
+  question: "What is the term for a type of non-probability sampling that involves selecting participants based on convenience?",
+  choice1: "Convenience sampling",
+  choice2: "Purposive sampling",
+  choice3: "Quota sampling",
+  choice4: "Snowball sampling",
+  answer: 1,
+  rationale: "Convenience sampling involves selecting participants based on convenience."
+  },
+  {
+  question: "What is the term for a type of non-probability sampling that involves selecting participants based on their expertise or knowledge?",
+  choice1: "Convenience sampling",
+  choice2: "Purposive sampling",
+  choice3: "Quota sampling",
+  choice4: "Snowball sampling",
+  answer: 2,
+  rationale: "Purposive sampling involves selecting participants based"
+  },
+  {
+  question: "What is the formula for the mean of a dataset?",
+  choice1: "∑x / n",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The mean is calculated by summing all values and dividing by the number of values."
+  },
+  {
+  question: "What is the formula for the median of a dataset?",
+  choice1: "∑x / n",
+  choice2: "(n + 1) / 2",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 2,
+  rationale: "The median is the middle value of a dataset when it is sorted in ascending order."
+  },
+  {
+  question: "What is the formula for the range of a dataset?",
+  choice1: "Max - Min",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The range is the difference between the largest and smallest values in a dataset."
+  },
+  {
+  question: "What is the formula for the variance of a dataset?",
+  choice1: "∑(x - μ)^2 / n",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The variance measures the spread of a dataset."
+  },
+  {
+  question: "What is the formula for the standard deviation of a dataset?",
+  choice1: "√(∑(x - μ)^2 / n)",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The standard deviation measures the spread of a dataset."
+  },
+  {
+  question: "What is the formula for the correlation coefficient (r)?",
+  choice1: "∑(x - μ)(y - μ) / (√(∑(x - μ)^2)√(∑(y - μ)^2))",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The correlation coefficient measures the strength and direction of a linear relationship."
+  },
+  {
+  question: "What is the formula for the slope (b) of a linear regression line?",
+  choice1: "∑(x - μ)(y - μ) / ∑(x - μ)^2",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The slope measures the change in the dependent variable for a one-unit change in the independent variable."
+  },
+  {
+  question: "What is the formula for the y-intercept (a) of a linear regression line?",
+  choice1: "y - b(x)",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The y-intercept is the value of the dependent variable when the independent variable is equal to zero."
+  },
+  {
+  question: "What is the formula for the coefficient of determination (R^2)?",
+  choice1: "1 - (∑(y - ŷ)^2 / ∑(y - μ)^2)",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The coefficient of determination measures the proportion of the variance in the dependent variable that is explained by the independent variable."
+  },
+  {
+  question: "What is the formula for the standard error of the mean (SEM)?",
+  choice1: "σ / √n",
+  choice2: "(∑x - μ) / σ",
+  choice3: "(x - μ) / σ",
+  choice4: "∑(x - μ) / n",
+  answer: 1,
+  rationale: "The standard error of the mean measures the variability of the sample mean."
+  }
 ];
-
 
 
 
