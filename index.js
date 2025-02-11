@@ -26,8 +26,8 @@ function goToNextPage(){
 
 */
 
-const validPasswords = ["Damilola", "Ayomide", "Laerry","SOC217"];
-const passwordVersion = "v4";
+const validPasswords = ["Damilola", "Ayomide", "Laerry","GNS211"];
+const passwordVersion = "v5";
 const sessionExpiryTime = 1 * 60 * 60 * 1000; // 1 minute
 const splashScreen = document.getElementById("splash-screen");
 
@@ -58,7 +58,7 @@ function login() {
 
 // Protect Page Function
 function protectPage() {
-  const passwordVersion = "v4";
+  const passwordVersion = "v5";
   const sessionExpiryTime = 1 * 60 * 60 * 1000; // 1 minute
 
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // Ensure type check
