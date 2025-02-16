@@ -11,7 +11,7 @@ document.addEventListener("keydown", e => {
 
 
 
-const topic = " <br> GNS 211 Exam Simulation";
+const topic = " <br> CSS 305 Exam Simulation";
 const topicId = document.getElementById("topic");
 topicId.innerHTML = topic;
 setTimeout(disappear, 10000);
