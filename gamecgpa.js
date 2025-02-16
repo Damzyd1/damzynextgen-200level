@@ -36,505 +36,499 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestion = [];
 let questions = [
+    // Topic 1: Five Reasonable Research Questions
     {
-        question: "Which of the following is a common form of examination dishonesty?",
-        choice1: "Taking notes in class",
-        choice2: "Copying another student's answers",
-        choice3: "Asking for clarification from an instructor",
-        choice4: "Using official study materials",
+        question: "Which of the following is a characteristic of a good research question?",
+        choice1: "It is broad and vague.",
+        choice2: "It is specific and measurable.",
+        choice3: "It is based on assumptions.",
+        choice4: "It avoids any hypothesis.",
         answer: 2,
-        rationale: "Copying another student’s answers during an exam is a clear violation of academic integrity policies."
+        rationale: "A good research question should be specific, measurable, and focused to guide the research process effectively."
     },
     {
-        question: "A student who brings unauthorized materials into an examination hall is committing which form of academic dishonesty?",
-        choice1: "Plagiarism",
-        choice2: "Fabrication",
-        choice3: "Cheating",
-        choice4: "Collusion",
+        question: "What is the primary purpose of a research question?",
+        choice1: "To confuse the researcher.",
+        choice2: "To provide a clear direction for the study.",
+        choice3: "To limit the scope of the study.",
+        choice4: "To avoid data collection.",
+        answer: 2,
+        rationale: "A research question helps define the scope and direction of the study, ensuring the research stays focused."
+    },
+    {
+        question: "Which of the following is an example of a reasonable research question?",
+        choice1: "Why is the sky blue?",
+        choice2: "What is the impact of social media on teenage mental health?",
+        choice3: "How many stars are in the universe?",
+        choice4: "What is the meaning of life?",
+        answer: 2,
+        rationale: "A reasonable research question should be specific, researchable, and relevant to a particular field of study."
+    },
+    {
+        question: "What is the most important factor to consider when formulating a research question?",
+        choice1: "The complexity of the question.",
+        choice2: "The feasibility of answering the question.",
+        choice3: "The popularity of the topic.",
+        choice4: "The length of the question.",
+        answer: 2,
+        rationale: "Feasibility ensures that the research question can be answered within the constraints of time, resources, and data availability."
+    },
+    {
+        question: "Which of the following is NOT a characteristic of a good research question?",
+        choice1: "It is clear and concise.",
+        choice2: "It is open-ended.",
+        choice3: "It is based on personal opinion.",
+        choice4: "It is relevant to the field of study.",
         answer: 3,
-        rationale: "Bringing unauthorized materials is a direct form of cheating, which violates examination policies."
+        rationale: "A good research question should be based on evidence and research, not personal opinion."
     },
+
+    // Topic 2: Sources of Research Topic
     {
-        question: "Which of the following best describes collusion in the context of examination dishonesty?",
-        choice1: "Working together on an assignment without permission",
-        choice2: "Using a calculator during a math test",
-        choice3: "Memorizing key concepts before an exam",
-        choice4: "Citing sources in an essay",
-        answer: 1,
-        rationale: "Collusion involves unauthorized collaboration between students, which undermines academic integrity."
-    },
-    {
-        question: "What is the primary psychological impact of being caught in an act of examination dishonesty?",
-        choice1: "Increased motivation",
-        choice2: "Enhanced credibility",
-        choice3: "Loss of trust and potential disciplinary actions",
-        choice4: "Recognition for creativity",
+        question: "Which of the following is a primary source of research topics?",
+        choice1: "Textbooks.",
+        choice2: "Academic journals.",
+        choice3: "Personal experiences.",
+        choice4: "Wikipedia.",
         answer: 3,
-        rationale: "Being caught can lead to academic penalties, loss of trust, and potential long-term consequences."
+        rationale: "Personal experiences can inspire research topics by identifying gaps or problems in real-world situations."
     },
     {
-        question: "Which of the following strategies helps prevent examination dishonesty?",
-        choice1: "Allowing students to exchange answers",
-        choice2: "Creating multiple versions of the exam",
-        choice3: "Encouraging students to cheat discreetly",
-        choice4: "Giving the same exam every year",
+        question: "What is the role of literature review in identifying research topics?",
+        choice1: "To copy existing research.",
+        choice2: "To identify gaps in existing knowledge.",
+        choice3: "To avoid new research.",
+        choice4: "To summarize textbooks.",
         answer: 2,
-        rationale: "Having multiple exam versions minimizes opportunities for students to share answers."
+        rationale: "A literature review helps identify gaps in existing knowledge, which can lead to new research questions."
     },
     {
-        question: "Grief is best defined as:",
-        choice1: "A temporary feeling of sadness",
-        choice2: "A complex emotional response to loss",
-        choice3: "A form of academic dishonesty",
-        choice4: "A simple stress reaction",
-        answer: 2,
-        rationale: "Grief is a deep emotional reaction to loss that affects individuals in different ways."
-    },
-    {
-        question: "Which of the following is NOT a common stage of grief according to Kübler-Ross?",
-        choice1: "Denial",
-        choice2: "Bargaining",
-        choice3: "Celebration",
-        choice4: "Acceptance",
+        question: "Which of the following is a secondary source of research topics?",
+        choice1: "Interviews.",
+        choice2: "Surveys.",
+        choice3: "Academic journals.",
+        choice4: "Observations.",
         answer: 3,
-        rationale: "The Kübler-Ross model includes denial, anger, bargaining, depression, and acceptance, but not celebration."
+        rationale: "Academic journals provide existing research and insights that can inspire new research topics."
     },
     {
-        question: "Strategic communication in grief counseling primarily aims to:",
-        choice1: "Manipulate the emotions of the bereaved",
-        choice2: "Provide structured and empathetic guidance",
-        choice3: "Convince the grieving person to move on quickly",
-        choice4: "Ignore the emotions of the affected person",
-        answer: 2,
-        rationale: "Strategic communication ensures effective, empathetic, and supportive dialogue with grieving individuals."
-    },
-    {
-        question: "Which of the following is a strategic communication technique for supporting someone experiencing grief?",
-        choice1: "Offering quick solutions",
-        choice2: "Encouraging open expression of emotions",
-        choice3: "Telling them to move on",
-        choice4: "Ignoring their grief",
-        answer: 2,
-        rationale: "Encouraging open emotional expression helps the grieving process and provides comfort."
-    },
-    {
-        question: "What is the primary role of active listening in grief communication?",
-        choice1: "To prepare a response",
-        choice2: "To analyze the person’s emotions",
-        choice3: "To create a supportive and understanding environment",
-        choice4: "To correct the person's feelings",
+        question: "Why is it important to consider current trends when selecting a research topic?",
+        choice1: "To ensure the topic is outdated.",
+        choice2: "To make the research irrelevant.",
+        choice3: "To address contemporary issues.",
+        choice4: "To avoid practical applications.",
         answer: 3,
-        rationale: "Active listening helps grieving individuals feel heard and supported."
+        rationale: "Current trends ensure the research topic is relevant and addresses contemporary issues."
     },
     {
-        question: "Strategic communication during conflict resolution aims to:",
-        choice1: "Suppress opposing views",
-        choice2: "Achieve mutual understanding",
-        choice3: "Encourage hostility",
-        choice4: "Avoid discussions",
+        question: "Which of the following is NOT a reliable source for research topics?",
+        choice1: "Peer-reviewed articles.",
+        choice2: "Social media posts.",
+        choice3: "Government reports.",
+        choice4: "Conference proceedings.",
         answer: 2,
-        rationale: "Effective strategic communication fosters dialogue and mutual understanding in conflicts."
+        rationale: "Social media posts are not peer-reviewed and may lack credibility as a source for research topics."
+    },
+
+    // Topic 3: Variables and Types
+    {
+        question: "What is an independent variable in research?",
+        choice1: "The variable that is measured.",
+        choice2: "The variable that is manipulated.",
+        choice3: "The variable that remains constant.",
+        choice4: "The variable that is irrelevant.",
+        answer: 2,
+        rationale: "The independent variable is the one that is manipulated to observe its effect on the dependent variable."
     },
     {
-        question: "Which of the following is a key principle of strategic communication?",
-        choice1: "Using aggressive language",
-        choice2: "Ignoring the other party’s concerns",
-        choice3: "Tailoring messages to the audience",
-        choice4: "Avoiding communication altogether",
+        question: "Which of the following is an example of a dependent variable?",
+        choice1: "The amount of fertilizer used.",
+        choice2: "The growth rate of plants.",
+        choice3: "The type of soil used.",
+        choice4: "The amount of sunlight provided.",
+        answer: 2,
+        rationale: "The growth rate of plants depends on the independent variables like fertilizer, soil, and sunlight."
+    },
+    {
+        question: "What is a confounding variable?",
+        choice1: "A variable that is kept constant.",
+        choice2: "A variable that is manipulated.",
+        choice3: "A variable that affects the outcome but is not accounted for.",
+        choice4: "A variable that is irrelevant to the study.",
         answer: 3,
-        rationale: "Strategic communication involves adapting messages to suit the audience for maximum effectiveness."
+        rationale: "A confounding variable can distort the results by influencing the dependent variable unintentionally."
     },
     {
-        question: "In conflict resolution, dialogue is most effective when:",
-        choice1: "Only one party speaks",
-        choice2: "Both parties listen and engage actively",
-        choice3: "Personal attacks are used",
-        choice4: "The conflict is ignored",
-        answer: 2,
-        rationale: "Dialogue requires both sides to listen and engage constructively for successful resolution."
-    },
-    {
-        question: "What is the primary function of dialogue in resolving conflicts?",
-        choice1: "To establish dominance over the other party",
-        choice2: "To clarify misunderstandings and build consensus",
-        choice3: "To create further divisions",
-        choice4: "To delay resolution",
-        answer: 2,
-        rationale: "Dialogue helps clarify issues and build common ground for conflict resolution."
-    },
-    {
-        question: "Why is emotional intelligence important in conflict resolution dialogue?",
-        choice1: "It helps in ignoring the other person's emotions",
-        choice2: "It ensures manipulation of the other party",
-        choice3: "It allows individuals to manage emotions and communicate effectively",
-        choice4: "It encourages aggressive responses",
+        question: "Which of the following is an example of a categorical variable?",
+        choice1: "Age.",
+        choice2: "Height.",
+        choice3: "Gender.",
+        choice4: "Weight.",
         answer: 3,
-        rationale: "Emotional intelligence helps manage emotions and facilitates better communication in conflicts."
+        rationale: "Gender is a categorical variable as it represents distinct categories rather than numerical values."
     },
     {
-        question: "A barrier to productive dialogue in conflict resolution is:",
-        choice1: "Mutual respect",
-        choice2: "Listening actively",
-        choice3: "Refusal to acknowledge the other party’s perspective",
-        choice4: "Open-mindedness",
+        question: "What is the difference between a discrete and a continuous variable?",
+        choice1: "Discrete variables are measured, while continuous variables are counted.",
+        choice2: "Discrete variables are counted, while continuous variables are measured.",
+        choice3: "Discrete variables are always categorical.",
+        choice4: "Continuous variables are always numerical.",
+        answer: 2,
+        rationale: "Discrete variables are counted in whole numbers, while continuous variables can take any value within a range."
+    },
+
+    // Topic 4: Difference Between Probability and Non-Probability Sampling
+    {
+        question: "What is the main characteristic of probability sampling?",
+        choice1: "It relies on the researcher's judgment.",
+        choice2: "Every member of the population has an equal chance of being selected.",
+        choice3: "It is less time-consuming.",
+        choice4: "It is used in qualitative research.",
+        answer: 2,
+        rationale: "Probability sampling ensures that every member of the population has an equal chance of being selected, reducing bias."
+    },
+    {
+        question: "Which of the following is an example of probability sampling?",
+        choice1: "Convenience sampling.",
+        choice2: "Snowball sampling.",
+        choice3: "Stratified sampling.",
+        choice4: "Purposive sampling.",
         answer: 3,
-        rationale: "Refusing to acknowledge different perspectives hinders constructive dialogue and resolution."
+        rationale: "Stratified sampling is a type of probability sampling where the population is divided into strata, and samples are randomly selected from each stratum."
     },
     {
-        question: "Which communication approach is most effective in conflict resolution?",
-        choice1: "Confrontational and defensive",
-        choice2: "Passive and dismissive",
-        choice3: "Open and collaborative",
-        choice4: "Silent and avoidant",
+        question: "What is a disadvantage of non-probability sampling?",
+        choice1: "It is more expensive.",
+        choice2: "It is less representative of the population.",
+        choice3: "It requires a large sample size.",
+        choice4: "It is time-consuming.",
+        answer: 2,
+        rationale: "Non-probability sampling often results in a sample that is not representative of the population, leading to biased results."
+    },
+    {
+        question: "Which of the following is an example of non-probability sampling?",
+        choice1: "Simple random sampling.",
+        choice2: "Cluster sampling.",
+        choice3: "Quota sampling.",
+        choice4: "Systematic sampling.",
         answer: 3,
-        rationale: "An open and collaborative approach fosters resolution and mutual understanding."
+        rationale: "Quota sampling is a non-probability sampling method where the researcher selects participants based on specific characteristics."
     },
     {
-        question: "What is the main disadvantage of avoiding dialogue in conflict resolution?",
-        choice1: "It delays resolution and may escalate the issue",
-        choice2: "It leads to immediate resolution",
-        choice3: "It makes both parties happier",
-        choice4: "It removes all forms of disagreement",
-        answer: 1,
-        rationale: "Avoiding dialogue can worsen conflicts by leaving issues unresolved."
-    },
-    {
-        question: "Which of the following is a technique used to promote productive dialogue in conflict resolution?",
-        choice1: "Blaming the other party",
-        choice2: "Using 'I' statements to express concerns",
-        choice3: "Raising one's voice to assert dominance",
-        choice4: "Ignoring the concerns of the other party",
+        question: "Why is probability sampling preferred in quantitative research?",
+        choice1: "It is easier to implement.",
+        choice2: "It ensures generalizability of results.",
+        choice3: "It requires a smaller sample size.",
+        choice4: "It is less expensive.",
         answer: 2,
-        rationale: "'I' statements express concerns without blaming others, making dialogue more productive."
-    },
-    {
-        question: "What is the role of mediation in conflict resolution dialogue?",
-        choice1: "To escalate the conflict",
-        choice2: "To act as an unbiased facilitator for resolution",
-        choice3: "To force one party to surrender",
-        choice4: "To avoid discussing the issue",
-        answer: 2,
-        rationale: "Mediators help facilitate fair dialogue and guide conflicting parties toward resolution."
-    },
-    {
-        question: "What is a pluralistic society?",
-        choice1: "A society with a single dominant culture",
-        choice2: "A society with multiple cultural groups coexisting",
-        choice3: "A society with no cultural diversity",
-        choice4: "A society with no government",
-        answer: 2,
-        rationale: "A pluralistic society is characterized by the coexistence of multiple cultural groups, each maintaining its unique identity."
-    },
-    {
-        question: "Which of the following is a major challenge in a pluralistic society like Nigeria?",
-        choice1: "Cultural assimilation",
-        choice2: "Ethnic and religious conflicts",
-        choice3: "Lack of natural resources",
-        choice4: "Overpopulation",
-        answer: 2,
-        rationale: "Ethnic and religious conflicts are significant challenges in pluralistic societies due to the diversity of cultural and religious groups."
-    },
-    {
-        question: "What is the role of education in a pluralistic society?",
-        choice1: "To promote a single culture",
-        choice2: "To foster understanding and tolerance among diverse groups",
-        choice3: "To eliminate cultural diversity",
-        choice4: "To enforce religious beliefs",
-        answer: 2,
-        rationale: "Education plays a crucial role in fostering understanding and tolerance among diverse cultural and religious groups in a pluralistic society."
+        rationale: "Probability sampling allows researchers to generalize findings to the broader population with greater confidence."
     },
 
-    // MODULE 2: AGEING IN NIGERIA: ISSUES, CHALLENGES, AND PROSPECTS
+    // Topic 5: Differentiated Between Qualitative and Quantitative Research Design
     {
-        question: "What is the primary challenge faced by the elderly in Nigeria?",
-        choice1: "Lack of access to healthcare",
-        choice2: "Excessive government support",
-        choice3: "Overpopulation",
-        choice4: "High employment rates",
-        answer: 1,
-        rationale: "The elderly in Nigeria often face challenges related to inadequate access to healthcare services."
+        question: "What is the primary focus of qualitative research?",
+        choice1: "To test hypotheses.",
+        choice2: "To explore and understand phenomena.",
+        choice3: "To quantify relationships.",
+        choice4: "To use statistical analysis.",
+        answer: 2,
+        rationale: "Qualitative research focuses on exploring and understanding phenomena through non-numerical data."
     },
     {
-        question: "Which of the following is a prospect for improving the lives of the elderly in Nigeria?",
-        choice1: "Increased social security benefits",
-        choice2: "Reduced healthcare facilities",
-        choice3: "Higher retirement age",
-        choice4: "Decreased family support",
-        answer: 1,
-        rationale: "Increased social security benefits can significantly improve the quality of life for the elderly by providing financial stability."
+        question: "Which of the following is a characteristic of quantitative research?",
+        choice1: "It uses open-ended questions.",
+        choice2: "It relies on numerical data.",
+        choice3: "It is subjective.",
+        choice4: "It is exploratory.",
+        answer: 2,
+        rationale: "Quantitative research relies on numerical data and statistical analysis to draw conclusions."
     },
     {
-        question: "What is a common issue faced by ageing populations in Nigeria?",
-        choice1: "Lack of family support",
-        choice2: "Excessive government pensions",
-        choice3: "High employment rates",
-        choice4: "Overpopulation",
+        question: "What is the main difference between qualitative and quantitative research?",
+        choice1: "Qualitative research uses large sample sizes, while quantitative research uses small sample sizes.",
+        choice2: "Qualitative research is objective, while quantitative research is subjective.",
+        choice3: "Qualitative research explores phenomena, while quantitative research tests hypotheses.",
+        choice4: "Qualitative research uses statistical analysis, while quantitative research uses thematic analysis.",
+        answer: 3,
+        rationale: "Qualitative research is exploratory, while quantitative research is focused on testing hypotheses and quantifying relationships."
+    },
+    {
+        question: "Which of the following is an example of qualitative research?",
+        choice1: "A survey with closed-ended questions.",
+        choice2: "An experiment with control groups.",
+        choice3: "A case study with interviews.",
+        choice4: "A statistical analysis of census data.",
+        answer: 3,
+        rationale: "Case studies with interviews are a common method in qualitative research, as they provide in-depth insights into phenomena."
+    },
+    {
+        question: "What is a limitation of qualitative research?",
+        choice1: "It is difficult to generalize findings.",
+        choice2: "It requires large sample sizes.",
+        choice3: "It is expensive to conduct.",
+        choice4: "It relies on numerical data.",
         answer: 1,
-        rationale: "Many elderly individuals in Nigeria face a lack of family support, which can lead to social and economic challenges."
+        rationale: "Qualitative research often involves small sample sizes, making it difficult to generalize findings to a broader population."
     },
 
-    // CAUSES AND EFFECTS OF RELIGIOUS VIOLENCE IN NIGERIA
+    // Topic 6: Major Philosophical Underpinnings in Criminology
     {
-        question: "What is a primary cause of religious violence in Nigeria?",
-        choice1: "Economic inequality",
-        choice2: "Political stability",
-        choice3: "Religious tolerance",
-        choice4: "Cultural assimilation",
-        answer: 1,
-        rationale: "Economic inequality often exacerbates tensions between religious groups, leading to violence."
-    },
-    {
-        question: "Which of the following is an effect of religious violence in Nigeria?",
-        choice1: "Increased social cohesion",
-        choice2: "Displacement of communities",
-        choice3: "Economic growth",
-        choice4: "Political stability",
+        question: "Which philosophical approach emphasizes free will and rational choice in criminology?",
+        choice1: "Positivism.",
+        choice2: "Classical theory.",
+        choice3: "Social disorganization theory.",
+        choice4: "Labeling theory.",
         answer: 2,
-        rationale: "Religious violence often results in the displacement of communities, leading to humanitarian crises."
+        rationale: "Classical theory in criminology emphasizes free will and rational decision-making as the basis for criminal behavior."
     },
     {
-        question: "How can religious violence in Nigeria be mitigated?",
-        choice1: "By promoting interfaith dialogue",
-        choice2: "By increasing economic inequality",
-        choice3: "By enforcing a single religion",
-        choice4: "By reducing education opportunities",
-        answer: 1,
-        rationale: "Promoting interfaith dialogue can help reduce tensions and foster understanding between different religious groups."
+        question: "What is the focus of positivist criminology?",
+        choice1: "Social factors influencing crime.",
+        choice2: "Biological and psychological factors influencing crime.",
+        choice3: "Rational decision-making.",
+        choice4: "Legal definitions of crime.",
+        answer: 2,
+        rationale: "Positivist criminology focuses on biological, psychological, and social factors that influence criminal behavior."
+    },
+    {
+        question: "Which theory suggests that crime is a result of societal labeling?",
+        choice1: "Strain theory.",
+        choice2: "Labeling theory.",
+        choice3: "Routine activities theory.",
+        choice4: "Control theory.",
+        answer: 2,
+        rationale: "Labeling theory posits that individuals become criminals because they are labeled as such by society."
+    },
+    {
+        question: "What is the primary focus of critical criminology?",
+        choice1: "Individual behavior.",
+        choice2: "Social justice and inequality.",
+        choice3: "Biological factors.",
+        choice4: "Legal definitions of crime.",
+        answer: 2,
+        rationale: "Critical criminology focuses on social justice, inequality, and the role of power structures in defining and addressing crime."
+    },
+    {
+        question: "Which philosophical approach in criminology emphasizes the role of environmental factors in crime?",
+        choice1: "Classical theory.",
+        choice2: "Positivism.",
+        choice3: "Social disorganization theory.",
+        choice4: "Rational choice theory.",
+        answer: 3,
+        rationale: "Social disorganization theory emphasizes the role of environmental factors, such as neighborhood conditions, in influencing crime rates."
     },
 
-    // Grief and strategic communication
+    // Topic 7: Advantages and Disadvantages of Questionnaires
     {
-        question: "What is the primary goal of strategic communication in the context of grief?",
-        choice1: "To suppress emotions",
-        choice2: "To provide support and facilitate healing",
-        choice3: "To increase economic growth",
-        choice4: "To enforce political agendas",
+        question: "What is a major advantage of using questionnaires in research?",
+        choice1: "They are time-consuming.",
+        choice2: "They allow for large sample sizes.",
+        choice3: "They are expensive to administer.",
+        choice4: "They require face-to-face interaction.",
         answer: 2,
-        rationale: "Strategic communication in the context of grief aims to provide support and facilitate healing for those affected."
+        rationale: "Questionnaires allow researchers to collect data from a large number of participants efficiently."
     },
     {
-        question: "Which of the following is a key component of effective grief communication?",
-        choice1: "Avoiding the topic of loss",
-        choice2: "Providing empathetic and clear information",
-        choice3: "Focusing solely on economic issues",
-        choice4: "Enforcing religious beliefs",
+        question: "What is a disadvantage of using questionnaires?",
+        choice1: "They are easy to analyze.",
+        choice2: "They may have low response rates.",
+        choice3: "They are cost-effective.",
+        choice4: "They allow for in-depth responses.",
         answer: 2,
-        rationale: "Effective grief communication involves providing empathetic and clear information to help individuals cope with loss."
+        rationale: "Questionnaires often suffer from low response rates, which can affect the validity of the data."
     },
     {
-        question: "How can strategic communication help in managing public grief?",
-        choice1: "By ignoring the public's emotions",
-        choice2: "By providing timely and accurate information",
-        choice3: "By increasing economic inequality",
-        choice4: "By enforcing political stability",
+        question: "Which of the following is an advantage of closed-ended questions in questionnaires?",
+        choice1: "They allow for detailed responses.",
+        choice2: "They are easy to analyze statistically.",
+        choice3: "They encourage creativity.",
+        choice4: "They are open to interpretation.",
         answer: 2,
-        rationale: "Strategic communication can help manage public grief by providing timely and accurate information, which helps in building trust and reducing anxiety."
+        rationale: "Closed-ended questions provide structured responses that are easy to analyze statistically."
+    },
+    {
+        question: "What is a limitation of open-ended questions in questionnaires?",
+        choice1: "They are easy to analyze.",
+        choice2: "They limit response options.",
+        choice3: "They are time-consuming to analyze.",
+        choice4: "They discourage detailed responses.",
+        answer: 3,
+        rationale: "Open-ended questions require more time and effort to analyze due to the variability in responses."
+    },
+    {
+        question: "Why might questionnaires be unsuitable for sensitive topics?",
+        choice1: "They are too expensive.",
+        choice2: "Participants may not provide honest answers.",
+        choice3: "They are difficult to distribute.",
+        choice4: "They require face-to-face interaction.",
+        answer: 2,
+        rationale: "Participants may be reluctant to provide honest answers on sensitive topics due to fear of judgment or lack of anonymity."
+    },
+    {
+        question: "Which epistemological approach believes that social reality can be studied using the same methods as the natural sciences?",
+        choice1: "Positivism",
+        choice2: "Interpretivism",
+        choice3: "Critical Theory",
+        choice4: "Constructivism",
+        answer: 1,
+        rationale: "Positivism holds that objective knowledge about social reality can be obtained using scientific methods similar to those in the natural sciences."
+    },
+    {
+        question: "Interpretivism primarily seeks to:",
+        choice1: "Find universal laws governing society",
+        choice2: "Understand the subjective meanings individuals attach to social phenomena",
+        choice3: "Criticize and transform society",
+        choice4: "Establish absolute truths about human behavior",
+        answer: 2,
+        rationale: "Interpretivism emphasizes understanding individuals' perspectives and meanings within social contexts rather than discovering universal laws."
+    },
+    {
+        question: "Critical theory challenges traditional social research by:",
+        choice1: "Advocating for neutrality in research",
+        choice2: "Promoting value-free scientific inquiry",
+        choice3: "Exposing power structures and advocating for social change",
+        choice4: "Focusing only on numerical data",
+        answer: 3,
+        rationale: "Critical theory aims to uncover and challenge power imbalances, seeking to transform society through critical analysis."
+    },
+    {
+        question: "Which ontological perspective argues that reality exists independently of human perception?",
+        choice1: "Constructivism",
+        choice2: "Realism",
+        choice3: "Interpretivism",
+        choice4: "Postmodernism",
+        answer: 2,
+        rationale: "Realism asserts that an objective reality exists regardless of human beliefs or perceptions."
+    },
+    {
+        question: "Constructivists believe that:",
+        choice1: "Social reality is objectively measurable",
+        choice2: "Reality is socially constructed through human interactions",
+        choice3: "Truth is absolute and universal",
+        choice4: "Science is the only way to understand social phenomena",
+        answer: 2,
+        rationale: "Constructivism argues that knowledge and social reality are shaped by human interactions and cultural contexts."
+    },
+    {
+        question: "Which of the following best describes the positivist approach to research?",
+        choice1: "Emphasizing subjectivity and personal experiences",
+        choice2: "Using rigorous scientific methods to uncover objective truths",
+        choice3: "Rejecting empirical data in favor of critical reflection",
+        choice4: "Believing reality is only a human construct",
+        answer: 2,
+        rationale: "Positivism relies on empirical data and scientific methods to discover objective truths about social phenomena."
+    },
+    {
+        question: "A researcher using an interpretivist approach is most likely to:",
+        choice1: "Conduct statistical surveys",
+        choice2: "Use in-depth interviews and ethnography",
+        choice3: "Avoid studying human behavior",
+        choice4: "Ignore cultural and social influences",
+        answer: 2,
+        rationale: "Interpretivist research methods focus on qualitative techniques like interviews to understand individual experiences and meanings."
+    },
+    {
+        question: "Which epistemological approach aligns with Marxist perspectives on social change?",
+        choice1: "Positivism",
+        choice2: "Interpretivism",
+        choice3: "Critical Theory",
+        choice4: "Realism",
+        answer: 3,
+        rationale: "Critical theory, influenced by Marxist thought, critiques societal structures and advocates for transformative social change."
+    },
+    {
+        question: "How does realism differ from constructivism?",
+        choice1: "Realism sees reality as independent, while constructivism sees it as socially constructed",
+        choice2: "Both believe reality is a human construct",
+        choice3: "Constructivism emphasizes objective facts, while realism emphasizes subjectivity",
+        choice4: "Realism rejects the existence of a social world",
+        answer: 1,
+        rationale: "Realism asserts an independent reality, whereas constructivism holds that reality is shaped by social and cultural processes."
+    },
+    {
+        question: "Which research approach aligns most closely with constructivism?",
+        choice1: "Experimental research",
+        choice2: "Qualitative research",
+        choice3: "Survey-based research",
+        choice4: "Mathematical modeling",
+        answer: 2,
+        rationale: "Constructivism supports qualitative research methods that explore how individuals and groups create meaning in society."
     },
 
-    // ISSUES IN FUNDAMENTAL HUMAN RIGHTS
+    // Understanding Sampling Methods
     {
-        question: "What is a fundamental human right?",
-        choice1: "The right to own property",
-        choice2: "The right to freedom of speech",
-        choice3: "The right to discriminate",
-        choice4: "The right to violate others' rights",
+        question: "What is the primary purpose of sampling in research?",
+        choice1: "To study an entire population",
+        choice2: "To gather data from a subset that represents the whole population",
+        choice3: "To ensure all individuals participate in a study",
+        choice4: "To eliminate variability in research",
         answer: 2,
-        rationale: "Freedom of speech is a fundamental human right that allows individuals to express their opinions without fear of repression."
+        rationale: "Sampling allows researchers to study a subset of a population to make generalizable conclusions about the whole."
     },
     {
-        question: "Which of the following is a violation of human rights?",
-        choice1: "Providing access to education",
-        choice2: "Arbitrary arrest and detention",
-        choice3: "Ensuring freedom of religion",
-        choice4: "Promoting gender equality",
+        question: "Which sampling method gives every member of a population an equal chance of being selected?",
+        choice1: "Convenience sampling",
+        choice2: "Snowball sampling",
+        choice3: "Simple random sampling",
+        choice4: "Purposive sampling",
+        answer: 3,
+        rationale: "Simple random sampling ensures that each member of a population has an equal probability of selection, reducing bias."
+    },
+    {
+        question: "Which sampling technique involves selecting participants based on ease of access?",
+        choice1: "Stratified sampling",
+        choice2: "Random sampling",
+        choice3: "Convenience sampling",
+        choice4: "Cluster sampling",
+        answer: 3,
+        rationale: "Convenience sampling selects participants based on availability and accessibility, but it may introduce bias."
+    },
+    {
+        question: "When is stratified sampling most useful?",
+        choice1: "When the population is homogenous",
+        choice2: "When the population has distinct subgroups that need representation",
+        choice3: "When studying an entire population is possible",
+        choice4: "When random selection is unnecessary",
         answer: 2,
-        rationale: "Arbitrary arrest and detention are clear violations of human rights as they deprive individuals of their liberty without due process."
+        rationale: "Stratified sampling ensures representation of different subgroups within a population by dividing it into strata before sampling."
     },
     {
-        question: "How can human rights be protected in a society?",
-        choice1: "By enforcing strict laws",
-        choice2: "By promoting awareness and education",
-        choice3: "By limiting freedom of speech",
-        choice4: "By increasing economic inequality",
+        question: "A researcher studying a hidden population, such as drug users, is most likely to use:",
+        choice1: "Cluster sampling",
+        choice2: "Snowball sampling",
+        choice3: "Systematic sampling",
+        choice4: "Simple random sampling",
         answer: 2,
-        rationale: "Promoting awareness and education about human rights is essential for their protection and enforcement in society."
-    },
-
-    // NIGERIAN LEGAL SYSTEM; CONCEPT OF JUSTICE AND RULE OF LAW
-    {
-        question: "What is the rule of law?",
-        choice1: "The principle that all people are subject to the law",
-        choice2: "The idea that laws can be ignored by the government",
-        choice3: "The concept that only certain individuals are above the law",
-        choice4: "The principle that laws are unnecessary",
-        answer: 1,
-        rationale: "The rule of law is the principle that all individuals, including government officials, are subject to the law and must abide by it."
+        rationale: "Snowball sampling is effective for studying hard-to-reach populations by using existing participants to recruit others."
     },
     {
-        question: "Which of the following is a key component of the Nigerian legal system?",
-        choice1: "Judicial independence",
-        choice2: "Arbitrary enforcement of laws",
-        choice3: "Lack of legal representation",
-        choice4: "Discrimination in legal processes",
-        answer: 1,
-        rationale: "Judicial independence is a crucial component of the Nigerian legal system, ensuring that the judiciary operates without external influence."
-    },
-    {
-        question: "What is the concept of justice in the Nigerian legal system?",
-        choice1: "Favoring the wealthy",
-        choice2: "Ensuring fairness and equality before the law",
-        choice3: "Discriminating against certain groups",
-        choice4: "Ignoring human rights",
+        question: "Which sampling method divides the population into groups and then randomly selects entire groups for study?",
+        choice1: "Systematic sampling",
+        choice2: "Cluster sampling",
+        choice3: "Purposive sampling",
+        choice4: "Quota sampling",
         answer: 2,
-        rationale: "The concept of justice in the Nigerian legal system revolves around ensuring fairness and equality before the law for all individuals."
+        rationale: "Cluster sampling selects entire groups randomly instead of individual members, making it useful for large and geographically dispersed populations."
     },
-
-    // Concept of examination dishonesty: before, during, after exams.(and their forms)
     {
-        question: "What is examination dishonesty?",
-        choice1: "Following exam rules strictly",
-        choice2: "Engaging in unethical practices to gain an advantage in exams",
-        choice3: "Preparing adequately for exams",
-        choice4: "Seeking help from teachers",
+        question: "Which of the following is a probability sampling method?",
+        choice1: "Purposive sampling",
+        choice2: "Convenience sampling",
+        choice3: "Quota sampling",
+        choice4: "Systematic sampling",
+        answer: 4,
+        rationale: "Systematic sampling is a probability sampling method where every nth element in a population is selected, ensuring some level of randomness."
+    },
+    {
+        question: "What is the main advantage of probability sampling?",
+        choice1: "It allows for non-random participant selection",
+        choice2: "It increases the representativeness of the sample",
+        choice3: "It requires no statistical knowledge",
+        choice4: "It guarantees 100% accuracy",
         answer: 2,
-        rationale: "Examination dishonesty involves engaging in unethical practices such as cheating or plagiarism to gain an unfair advantage in exams."
-    },
-    {
-        question: "Which of the following is a form of examination dishonesty?",
-        choice1: "Studying hard for exams",
-        choice2: "Using unauthorized materials during exams",
-        choice3: "Following exam instructions",
-        choice4: "Seeking clarification from teachers",
-        answer: 2,
-        rationale: "Using unauthorized materials during exams is a common form of examination dishonesty."
-    },
-    {
-        question: "How can examination dishonesty be prevented?",
-        choice1: "By promoting a culture of integrity",
-        choice2: "By encouraging cheating",
-        choice3: "By reducing exam supervision",
-        choice4: "By ignoring unethical practices",
-        answer: 1,
-        rationale: "Promoting a culture of integrity and ethical behavior is essential in preventing examination dishonesty."
-    },
-
-    // The Concept of Religion, Ethnicity, Politics and Development
-    {
-        question: "How does religion influence development in Nigeria?",
-        choice1: "By promoting unity and social cohesion",
-        choice2: "By causing conflicts and divisions",
-        choice3: "By reducing economic growth",
-        choice4: "By enforcing political instability",
-        answer: 1,
-        rationale: "Religion can promote unity and social cohesion, which are essential for development, but it can also cause conflicts if not managed properly."
-    },
-    {
-        question: "What is the role of ethnicity in Nigerian politics?",
-        choice1: "It has no influence on politics",
-        choice2: "It often leads to political polarization and conflicts",
-        choice3: "It promotes economic growth",
-        choice4: "It ensures political stability",
-        answer: 2,
-        rationale: "Ethnicity often plays a significant role in Nigerian politics, leading to polarization and conflicts due to competing interests."
-    },
-    {
-        question: "How can politics influence development in Nigeria?",
-        choice1: "By promoting good governance and policies",
-        choice2: "By encouraging corruption",
-        choice3: "By reducing access to education",
-        choice4: "By enforcing ethnic divisions",
-        answer: 1,
-        rationale: "Politics can significantly influence development by promoting good governance and implementing policies that foster economic and social growth."
-    },
-
-    // THE ROLE OF DIALOGUE IN CONFLICT RESOLUTION
-    {
-        question: "What is the primary role of dialogue in conflict resolution?",
-        choice1: "To escalate conflicts",
-        choice2: "To facilitate understanding and agreement between parties",
-        choice3: "To enforce one party's will",
-        choice4: "To ignore the issues",
-        answer: 2,
-        rationale: "Dialogue plays a crucial role in conflict resolution by facilitating understanding and agreement between conflicting parties."
-    },
-    {
-        question: "Which of the following is a key component of effective dialogue?",
-        choice1: "Active listening",
-        choice2: "Ignoring the other party's concerns",
-        choice3: "Enforcing one's own agenda",
-        choice4: "Avoiding communication",
-        answer: 1,
-        rationale: "Active listening is a key component of effective dialogue, as it helps in understanding the concerns and perspectives of all parties involved."
-    },
-    {
-        question: "How can dialogue contribute to peacebuilding?",
-        choice1: "By promoting mutual understanding and cooperation",
-        choice2: "By escalating tensions",
-        choice3: "By enforcing one party's dominance",
-        choice4: "By ignoring the root causes of conflict",
-        answer: 1,
-        rationale: "Dialogue contributes to peacebuilding by promoting mutual understanding and cooperation, which are essential for resolving conflicts and building lasting peace."
-    },
-
-    // ANTI-CORRUPTION, INTEGRITY AND SOCIETAL DEVELOPMENT IN NIGERIA
-    {
-        question: "What is the impact of corruption on societal development in Nigeria?",
-        choice1: "It promotes economic growth",
-        choice2: "It hinders development by diverting resources",
-        choice3: "It ensures political stability",
-        choice4: "It reduces poverty",
-        answer: 2,
-        rationale: "Corruption hinders societal development by diverting resources away from essential services and infrastructure, leading to economic and social challenges."
-    },
-    {
-        question: "How can integrity be promoted in Nigeria?",
-        choice1: "By encouraging corrupt practices",
-        choice2: "By enforcing strict anti-corruption laws",
-        choice3: "By ignoring unethical behavior",
-        choice4: "By reducing transparency",
-        answer: 2,
-        rationale: "Promoting integrity requires enforcing strict anti-corruption laws and fostering a culture of accountability and transparency."
-    },
-    {
-        question: "What is the role of anti-corruption agencies in Nigeria?",
-        choice1: "To promote corruption",
-        choice2: "To investigate and prosecute corrupt practices",
-        choice3: "To ignore corrupt activities",
-        choice4: "To reduce transparency",
-        answer: 2,
-        rationale: "Anti-corruption agencies play a crucial role in investigating and prosecuting corrupt practices, thereby promoting accountability and integrity."
-    },
-
-    // UNDERSTANDING PEACE, SECURITY AND DEVELOPMENT
-    {
-        question: "What is the relationship between peace and development?",
-        choice1: "Peace hinders development",
-        choice2: "Peace is essential for sustainable development",
-        choice3: "Development is not affected by peace",
-        choice4: "Peace and development are unrelated",
-        answer: 2,
-        rationale: "Peace is essential for sustainable development as it creates a stable environment for economic growth and social progress."
-    },
-    {
-        question: "How does security contribute to development?",
-        choice1: "By creating instability",
-        choice2: "By fostering a safe environment for economic activities",
-        choice3: "By reducing access to education",
-        choice4: "By encouraging conflicts",
-        answer: 2,
-        rationale: "Security contributes to development by fostering a safe environment that enables economic activities and social progress."
-    },
-    {
-        question: "What is a key factor in achieving sustainable peace?",
-        choice1: "Promoting inequality",
-        choice2: "Addressing the root causes of conflict",
-        choice3: "Ignoring social issues",
-        choice4: "Enforcing authoritarian rule",
-        answer: 2,
-        rationale: "Achieving sustainable peace requires addressing the root causes of conflict, such as inequality, injustice, and lack of access to resources."
+        rationale: "Probability sampling increases the likelihood of obtaining a representative sample, making generalization to the population more valid."
     }
 ];
-
 
 
 
