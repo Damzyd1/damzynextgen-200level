@@ -11,7 +11,7 @@ document.addEventListener("keydown", e => {
 
 
 
-const topic = " <br> CSS 305 Exam Simulation";
+const topic = " <br> CSS 304  Pre-lecture Test";
 const topicId = document.getElementById("topic");
 topicId.innerHTML = topic;
 setTimeout(disappear, 10000);
@@ -36,500 +36,277 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestion = [];
 let questions = [
-    // Topic 1: Five Reasonable Research Questions
     {
-        question: "Which of the following is a characteristic of a good research question?",
-        choice1: "It is broad and vague.",
-        choice2: "It is specific and measurable.",
-        choice3: "It is based on assumptions.",
-        choice4: "It avoids any hypothesis.",
-        answer: 2,
-        rationale: "A good research question should be specific, measurable, and focused to guide the research process effectively."
-    },
-    {
-        question: "What is the primary purpose of a research question?",
-        choice1: "To confuse the researcher.",
-        choice2: "To provide a clear direction for the study.",
-        choice3: "To limit the scope of the study.",
-        choice4: "To avoid data collection.",
-        answer: 2,
-        rationale: "A research question helps define the scope and direction of the study, ensuring the research stays focused."
-    },
-    {
-        question: "Which of the following is an example of a reasonable research question?",
-        choice1: "Why is the sky blue?",
-        choice2: "What is the impact of social media on teenage mental health?",
-        choice3: "How many stars are in the universe?",
-        choice4: "What is the meaning of life?",
-        answer: 2,
-        rationale: "A reasonable research question should be specific, researchable, and relevant to a particular field of study."
-    },
-    {
-        question: "What is the most important factor to consider when formulating a research question?",
-        choice1: "The complexity of the question.",
-        choice2: "The feasibility of answering the question.",
-        choice3: "The popularity of the topic.",
-        choice4: "The length of the question.",
-        answer: 2,
-        rationale: "Feasibility ensures that the research question can be answered within the constraints of time, resources, and data availability."
-    },
-    {
-        question: "Which of the following is NOT a characteristic of a good research question?",
-        choice1: "It is clear and concise.",
-        choice2: "It is open-ended.",
-        choice3: "It is based on personal opinion.",
-        choice4: "It is relevant to the field of study.",
+        question: "Who is considered the father of the Classical School of Criminology?",
+        choice1: "Cesare Lombroso",
+        choice2: "Jeremy Bentham",
+        choice3: "Cesare Beccaria",
+        choice4: "Emile Durkheim",
         answer: 3,
-        rationale: "A good research question should be based on evidence and research, not personal opinion."
+        rationale: "Cesare Beccaria is widely recognized as the father of the Classical School for advocating rational punishment and legal reform."
     },
-
-    // Topic 2: Sources of Research Topic
     {
-        question: "Which of the following is a primary source of research topics?",
-        choice1: "Textbooks.",
-        choice2: "Academic journals.",
-        choice3: "Personal experiences.",
-        choice4: "Wikipedia.",
+        question: "What was the Classical School’s primary explanation for criminal behavior?",
+        choice1: "Genetic abnormalities",
+        choice2: "Unconscious motives",
+        choice3: "Free will and rational choice",
+        choice4: "Social inequality",
         answer: 3,
-        rationale: "Personal experiences can inspire research topics by identifying gaps or problems in real-world situations."
+        rationale: "Classical theorists believed people commit crimes after rationally calculating benefits over consequences."
     },
     {
-        question: "What is the role of literature review in identifying research topics?",
-        choice1: "To copy existing research.",
-        choice2: "To identify gaps in existing knowledge.",
-        choice3: "To avoid new research.",
-        choice4: "To summarize textbooks.",
-        answer: 2,
-        rationale: "A literature review helps identify gaps in existing knowledge, which can lead to new research questions."
-    },
-    {
-        question: "Which of the following is a secondary source of research topics?",
-        choice1: "Interviews.",
-        choice2: "Surveys.",
-        choice3: "Academic journals.",
-        choice4: "Observations.",
+        question: "According to Classical thinkers, how can crime best be controlled?",
+        choice1: "Through rehabilitation",
+        choice2: "By improving social structures",
+        choice3: "By ensuring swift, certain, and proportionate punishment",
+        choice4: "Through long-term incarceration",
         answer: 3,
-        rationale: "Academic journals provide existing research and insights that can inspire new research topics."
+        rationale: "The Classical School emphasized deterrence through predictable and proportionate punishment."
     },
     {
-        question: "Why is it important to consider current trends when selecting a research topic?",
-        choice1: "To ensure the topic is outdated.",
-        choice2: "To make the research irrelevant.",
-        choice3: "To address contemporary issues.",
-        choice4: "To avoid practical applications.",
+        question: "How did the Classical School propose to predict criminal behavior?",
+        choice1: "By analyzing family history",
+        choice2: "By assuming all humans are rational and seek pleasure over pain",
+        choice3: "By evaluating mental illness",
+        choice4: "By studying economic status",
+        answer: 2,
+        rationale: "Prediction was based on the belief that everyone calculates actions using pleasure-pain principles."
+    },
+    {
+        question: "Which of the following best describes the Classical School’s view on crime?",
+        choice1: "Crime is caused by biological defects",
+        choice2: "Crime is a result of environmental factors",
+        choice3: "Crime is a product of free will and rational calculation",
+        choice4: "Crime is an unconscious drive",
         answer: 3,
-        rationale: "Current trends ensure the research topic is relevant and addresses contemporary issues."
+        rationale: "Classical theorists saw crime as a conscious and rational choice by the offender."
     },
     {
-        question: "Which of the following is NOT a reliable source for research topics?",
-        choice1: "Peer-reviewed articles.",
-        choice2: "Social media posts.",
-        choice3: "Government reports.",
-        choice4: "Conference proceedings.",
-        answer: 2,
-        rationale: "Social media posts are not peer-reviewed and may lack credibility as a source for research topics."
-    },
-
-    // Topic 3: Variables and Types
-    {
-        question: "What is an independent variable in research?",
-        choice1: "The variable that is measured.",
-        choice2: "The variable that is manipulated.",
-        choice3: "The variable that remains constant.",
-        choice4: "The variable that is irrelevant.",
-        answer: 2,
-        rationale: "The independent variable is the one that is manipulated to observe its effect on the dependent variable."
-    },
-    {
-        question: "Which of the following is an example of a dependent variable?",
-        choice1: "The amount of fertilizer used.",
-        choice2: "The growth rate of plants.",
-        choice3: "The type of soil used.",
-        choice4: "The amount of sunlight provided.",
-        answer: 2,
-        rationale: "The growth rate of plants depends on the independent variables like fertilizer, soil, and sunlight."
-    },
-    {
-        question: "What is a confounding variable?",
-        choice1: "A variable that is kept constant.",
-        choice2: "A variable that is manipulated.",
-        choice3: "A variable that affects the outcome but is not accounted for.",
-        choice4: "A variable that is irrelevant to the study.",
+        question: "What distinguishes the Neo-Classical School from the Classical School?",
+        choice1: "It rejects the idea of punishment",
+        choice2: "It denies human rationality",
+        choice3: "It introduces mitigating circumstances",
+        choice4: "It emphasizes genetics",
         answer: 3,
-        rationale: "A confounding variable can distort the results by influencing the dependent variable unintentionally."
+        rationale: "Neo-Classical theorists retained free will but acknowledged circumstances like age and mental health."
     },
     {
-        question: "Which of the following is an example of a categorical variable?",
-        choice1: "Age.",
-        choice2: "Height.",
-        choice3: "Gender.",
-        choice4: "Weight.",
+        question: "Which group would the Neo-Classical School consider less culpable for a crime?",
+        choice1: "Adults",
+        choice2: "The elderly",
+        choice3: "Children and the mentally ill",
+        choice4: "Repeat offenders",
         answer: 3,
-        rationale: "Gender is a categorical variable as it represents distinct categories rather than numerical values."
+        rationale: "Neo-Classical theory allows for reduced responsibility in vulnerable populations."
     },
     {
-        question: "What is the difference between a discrete and a continuous variable?",
-        choice1: "Discrete variables are measured, while continuous variables are counted.",
-        choice2: "Discrete variables are counted, while continuous variables are measured.",
-        choice3: "Discrete variables are always categorical.",
-        choice4: "Continuous variables are always numerical.",
-        answer: 2,
-        rationale: "Discrete variables are counted in whole numbers, while continuous variables can take any value within a range."
-    },
-
-    // Topic 4: Difference Between Probability and Non-Probability Sampling
-    {
-        question: "What is the main characteristic of probability sampling?",
-        choice1: "It relies on the researcher's judgment.",
-        choice2: "Every member of the population has an equal chance of being selected.",
-        choice3: "It is less time-consuming.",
-        choice4: "It is used in qualitative research.",
-        answer: 2,
-        rationale: "Probability sampling ensures that every member of the population has an equal chance of being selected, reducing bias."
-    },
-    {
-        question: "Which of the following is an example of probability sampling?",
-        choice1: "Convenience sampling.",
-        choice2: "Snowball sampling.",
-        choice3: "Stratified sampling.",
-        choice4: "Purposive sampling.",
+        question: "Which of the following statements reflects the Neo-Classical view on crime control?",
+        choice1: "Only capital punishment is effective",
+        choice2: "Rehabilitation is irrelevant",
+        choice3: "Punishment should consider individual circumstances",
+        choice4: "Crime should be punished equally for everyone",
         answer: 3,
-        rationale: "Stratified sampling is a type of probability sampling where the population is divided into strata, and samples are randomly selected from each stratum."
+        rationale: "Neo-Classical theory supports justice that adjusts based on personal factors."
     },
     {
-        question: "What is a disadvantage of non-probability sampling?",
-        choice1: "It is more expensive.",
-        choice2: "It is less representative of the population.",
-        choice3: "It requires a large sample size.",
-        choice4: "It is time-consuming.",
-        answer: 2,
-        rationale: "Non-probability sampling often results in a sample that is not representative of the population, leading to biased results."
-    },
-    {
-        question: "Which of the following is an example of non-probability sampling?",
-        choice1: "Simple random sampling.",
-        choice2: "Cluster sampling.",
-        choice3: "Quota sampling.",
-        choice4: "Systematic sampling.",
+        question: "How does the Neo-Classical School improve prediction of criminal behavior?",
+        choice1: "By studying economic factors",
+        choice2: "By analyzing physiological defects",
+        choice3: "By considering the impact of age, mental state, and intent",
+        choice4: "By conducting IQ tests",
         answer: 3,
-        rationale: "Quota sampling is a non-probability sampling method where the researcher selects participants based on specific characteristics."
+        rationale: "Neo-Classical theorists believe personal factors affect decision-making and can aid prediction."
     },
     {
-        question: "Why is probability sampling preferred in quantitative research?",
-        choice1: "It is easier to implement.",
-        choice2: "It ensures generalizability of results.",
-        choice3: "It requires a smaller sample size.",
-        choice4: "It is less expensive.",
+        question: "Which of these thinkers is associated with the Neo-Classical School?",
+        choice1: "Cesare Lombroso",
+        choice2: "Rafael Garofalo",
+        choice3: "Thomas Hobbes",
+        choice4: "Jeremy Bentham",
         answer: 2,
-        rationale: "Probability sampling allows researchers to generalize findings to the broader population with greater confidence."
+        rationale: "Garofalo advanced Neo-Classical thought by incorporating social and psychological dimensions."
     },
-
-    // Topic 5: Differentiated Between Qualitative and Quantitative Research Design
     {
-        question: "What is the primary focus of qualitative research?",
-        choice1: "To test hypotheses.",
-        choice2: "To explore and understand phenomena.",
-        choice3: "To quantify relationships.",
-        choice4: "To use statistical analysis.",
+        question: "Who is considered the pioneer of the Biological Positivist School?",
+        choice1: "Cesare Beccaria",
+        choice2: "Cesare Lombroso",
+        choice3: "Gabriel Tarde",
+        choice4: "Sigmund Freud",
         answer: 2,
-        rationale: "Qualitative research focuses on exploring and understanding phenomena through non-numerical data."
+        rationale: "Lombroso introduced the idea that criminals have inherited biological traits."
     },
     {
-        question: "Which of the following is a characteristic of quantitative research?",
-        choice1: "It uses open-ended questions.",
-        choice2: "It relies on numerical data.",
-        choice3: "It is subjective.",
-        choice4: "It is exploratory.",
-        answer: 2,
-        rationale: "Quantitative research relies on numerical data and statistical analysis to draw conclusions."
-    },
-    {
-        question: "What is the main difference between qualitative and quantitative research?",
-        choice1: "Qualitative research uses large sample sizes, while quantitative research uses small sample sizes.",
-        choice2: "Qualitative research is objective, while quantitative research is subjective.",
-        choice3: "Qualitative research explores phenomena, while quantitative research tests hypotheses.",
-        choice4: "Qualitative research uses statistical analysis, while quantitative research uses thematic analysis.",
+        question: "According to biological positivism, crime is caused by:",
+        choice1: "Social inequality",
+        choice2: "Free will",
+        choice3: "Physical and genetic abnormalities",
+        choice4: "Economic status",
         answer: 3,
-        rationale: "Qualitative research is exploratory, while quantitative research is focused on testing hypotheses and quantifying relationships."
+        rationale: "Biological positivists argue that inherited or physical defects influence criminality."
     },
     {
-        question: "Which of the following is an example of qualitative research?",
-        choice1: "A survey with closed-ended questions.",
-        choice2: "An experiment with control groups.",
-        choice3: "A case study with interviews.",
-        choice4: "A statistical analysis of census data.",
+        question: "Which of the following best describes how the Biological School aims to predict crime?",
+        choice1: "Through facial recognition software",
+        choice2: "By analyzing social behavior",
+        choice3: "By identifying inherited traits and physical anomalies",
+        choice4: "By observing family traditions",
         answer: 3,
-        rationale: "Case studies with interviews are a common method in qualitative research, as they provide in-depth insights into phenomena."
+        rationale: "Biological theories focus on observable physical or genetic predispositions."
     },
     {
-        question: "What is a limitation of qualitative research?",
-        choice1: "It is difficult to generalize findings.",
-        choice2: "It requires large sample sizes.",
-        choice3: "It is expensive to conduct.",
-        choice4: "It relies on numerical data.",
-        answer: 1,
-        rationale: "Qualitative research often involves small sample sizes, making it difficult to generalize findings to a broader population."
-    },
-
-    // Topic 6: Major Philosophical Underpinnings in Criminology
-    {
-        question: "Which philosophical approach emphasizes free will and rational choice in criminology?",
-        choice1: "Positivism.",
-        choice2: "Classical theory.",
-        choice3: "Social disorganization theory.",
-        choice4: "Labeling theory.",
-        answer: 2,
-        rationale: "Classical theory in criminology emphasizes free will and rational decision-making as the basis for criminal behavior."
-    },
-    {
-        question: "What is the focus of positivist criminology?",
-        choice1: "Social factors influencing crime.",
-        choice2: "Biological and psychological factors influencing crime.",
-        choice3: "Rational decision-making.",
-        choice4: "Legal definitions of crime.",
-        answer: 2,
-        rationale: "Positivist criminology focuses on biological, psychological, and social factors that influence criminal behavior."
-    },
-    {
-        question: "Which theory suggests that crime is a result of societal labeling?",
-        choice1: "Strain theory.",
-        choice2: "Labeling theory.",
-        choice3: "Routine activities theory.",
-        choice4: "Control theory.",
-        answer: 2,
-        rationale: "Labeling theory posits that individuals become criminals because they are labeled as such by society."
-    },
-    {
-        question: "What is the primary focus of critical criminology?",
-        choice1: "Individual behavior.",
-        choice2: "Social justice and inequality.",
-        choice3: "Biological factors.",
-        choice4: "Legal definitions of crime.",
-        answer: 2,
-        rationale: "Critical criminology focuses on social justice, inequality, and the role of power structures in defining and addressing crime."
-    },
-    {
-        question: "Which philosophical approach in criminology emphasizes the role of environmental factors in crime?",
-        choice1: "Classical theory.",
-        choice2: "Positivism.",
-        choice3: "Social disorganization theory.",
-        choice4: "Rational choice theory.",
-        answer: 3,
-        rationale: "Social disorganization theory emphasizes the role of environmental factors, such as neighborhood conditions, in influencing crime rates."
-    },
-
-    // Topic 7: Advantages and Disadvantages of Questionnaires
-    {
-        question: "What is a major advantage of using questionnaires in research?",
-        choice1: "They are time-consuming.",
-        choice2: "They allow for large sample sizes.",
-        choice3: "They are expensive to administer.",
-        choice4: "They require face-to-face interaction.",
-        answer: 2,
-        rationale: "Questionnaires allow researchers to collect data from a large number of participants efficiently."
-    },
-    {
-        question: "What is a disadvantage of using questionnaires?",
-        choice1: "They are easy to analyze.",
-        choice2: "They may have low response rates.",
-        choice3: "They are cost-effective.",
-        choice4: "They allow for in-depth responses.",
-        answer: 2,
-        rationale: "Questionnaires often suffer from low response rates, which can affect the validity of the data."
-    },
-    {
-        question: "Which of the following is an advantage of closed-ended questions in questionnaires?",
-        choice1: "They allow for detailed responses.",
-        choice2: "They are easy to analyze statistically.",
-        choice3: "They encourage creativity.",
-        choice4: "They are open to interpretation.",
-        answer: 2,
-        rationale: "Closed-ended questions provide structured responses that are easy to analyze statistically."
-    },
-    {
-        question: "What is a limitation of open-ended questions in questionnaires?",
-        choice1: "They are easy to analyze.",
-        choice2: "They limit response options.",
-        choice3: "They are time-consuming to analyze.",
-        choice4: "They discourage detailed responses.",
-        answer: 3,
-        rationale: "Open-ended questions require more time and effort to analyze due to the variability in responses."
-    },
-    {
-        question: "Why might questionnaires be unsuitable for sensitive topics?",
-        choice1: "They are too expensive.",
-        choice2: "Participants may not provide honest answers.",
-        choice3: "They are difficult to distribute.",
-        choice4: "They require face-to-face interaction.",
-        answer: 2,
-        rationale: "Participants may be reluctant to provide honest answers on sensitive topics due to fear of judgment or lack of anonymity."
-    },
-    {
-        question: "Which epistemological approach believes that social reality can be studied using the same methods as the natural sciences?",
-        choice1: "Positivism",
-        choice2: "Interpretivism",
-        choice3: "Critical Theory",
-        choice4: "Constructivism",
-        answer: 1,
-        rationale: "Positivism holds that objective knowledge about social reality can be obtained using scientific methods similar to those in the natural sciences."
-    },
-    {
-        question: "Interpretivism primarily seeks to:",
-        choice1: "Find universal laws governing society",
-        choice2: "Understand the subjective meanings individuals attach to social phenomena",
-        choice3: "Criticize and transform society",
-        choice4: "Establish absolute truths about human behavior",
-        answer: 2,
-        rationale: "Interpretivism emphasizes understanding individuals' perspectives and meanings within social contexts rather than discovering universal laws."
-    },
-    {
-        question: "Critical theory challenges traditional social research by:",
-        choice1: "Advocating for neutrality in research",
-        choice2: "Promoting value-free scientific inquiry",
-        choice3: "Exposing power structures and advocating for social change",
-        choice4: "Focusing only on numerical data",
-        answer: 3,
-        rationale: "Critical theory aims to uncover and challenge power imbalances, seeking to transform society through critical analysis."
-    },
-    {
-        question: "Which ontological perspective argues that reality exists independently of human perception?",
-        choice1: "Constructivism",
-        choice2: "Realism",
-        choice3: "Interpretivism",
-        choice4: "Postmodernism",
-        answer: 2,
-        rationale: "Realism asserts that an objective reality exists regardless of human beliefs or perceptions."
-    },
-    {
-        question: "Constructivists believe that:",
-        choice1: "Social reality is objectively measurable",
-        choice2: "Reality is socially constructed through human interactions",
-        choice3: "Truth is absolute and universal",
-        choice4: "Science is the only way to understand social phenomena",
-        answer: 2,
-        rationale: "Constructivism argues that knowledge and social reality are shaped by human interactions and cultural contexts."
-    },
-    {
-        question: "Which of the following best describes the positivist approach to research?",
-        choice1: "Emphasizing subjectivity and personal experiences",
-        choice2: "Using rigorous scientific methods to uncover objective truths",
-        choice3: "Rejecting empirical data in favor of critical reflection",
-        choice4: "Believing reality is only a human construct",
-        answer: 2,
-        rationale: "Positivism relies on empirical data and scientific methods to discover objective truths about social phenomena."
-    },
-    {
-        question: "A researcher using an interpretivist approach is most likely to:",
-        choice1: "Conduct statistical surveys",
-        choice2: "Use in-depth interviews and ethnography",
-        choice3: "Avoid studying human behavior",
-        choice4: "Ignore cultural and social influences",
-        answer: 2,
-        rationale: "Interpretivist research methods focus on qualitative techniques like interviews to understand individual experiences and meanings."
-    },
-    {
-        question: "Which epistemological approach aligns with Marxist perspectives on social change?",
-        choice1: "Positivism",
-        choice2: "Interpretivism",
-        choice3: "Critical Theory",
-        choice4: "Realism",
-        answer: 3,
-        rationale: "Critical theory, influenced by Marxist thought, critiques societal structures and advocates for transformative social change."
-    },
-    {
-        question: "How does realism differ from constructivism?",
-        choice1: "Realism sees reality as independent, while constructivism sees it as socially constructed",
-        choice2: "Both believe reality is a human construct",
-        choice3: "Constructivism emphasizes objective facts, while realism emphasizes subjectivity",
-        choice4: "Realism rejects the existence of a social world",
-        answer: 1,
-        rationale: "Realism asserts an independent reality, whereas constructivism holds that reality is shaped by social and cultural processes."
-    },
-    {
-        question: "Which research approach aligns most closely with constructivism?",
-        choice1: "Experimental research",
-        choice2: "Qualitative research",
-        choice3: "Survey-based research",
-        choice4: "Mathematical modeling",
-        answer: 2,
-        rationale: "Constructivism supports qualitative research methods that explore how individuals and groups create meaning in society."
-    },
-
-    // Understanding Sampling Methods
-    {
-        question: "What is the primary purpose of sampling in research?",
-        choice1: "To study an entire population",
-        choice2: "To gather data from a subset that represents the whole population",
-        choice3: "To ensure all individuals participate in a study",
-        choice4: "To eliminate variability in research",
-        answer: 2,
-        rationale: "Sampling allows researchers to study a subset of a population to make generalizable conclusions about the whole."
-    },
-    {
-        question: "Which sampling method gives every member of a population an equal chance of being selected?",
-        choice1: "Convenience sampling",
-        choice2: "Snowball sampling",
-        choice3: "Simple random sampling",
-        choice4: "Purposive sampling",
-        answer: 3,
-        rationale: "Simple random sampling ensures that each member of a population has an equal probability of selection, reducing bias."
-    },
-    {
-        question: "Which sampling technique involves selecting participants based on ease of access?",
-        choice1: "Stratified sampling",
-        choice2: "Random sampling",
-        choice3: "Convenience sampling",
-        choice4: "Cluster sampling",
-        answer: 3,
-        rationale: "Convenience sampling selects participants based on availability and accessibility, but it may introduce bias."
-    },
-    {
-        question: "When is stratified sampling most useful?",
-        choice1: "When the population is homogenous",
-        choice2: "When the population has distinct subgroups that need representation",
-        choice3: "When studying an entire population is possible",
-        choice4: "When random selection is unnecessary",
-        answer: 2,
-        rationale: "Stratified sampling ensures representation of different subgroups within a population by dividing it into strata before sampling."
-    },
-    {
-        question: "A researcher studying a hidden population, such as drug users, is most likely to use:",
-        choice1: "Cluster sampling",
-        choice2: "Snowball sampling",
-        choice3: "Systematic sampling",
-        choice4: "Simple random sampling",
-        answer: 2,
-        rationale: "Snowball sampling is effective for studying hard-to-reach populations by using existing participants to recruit others."
-    },
-    {
-        question: "Which sampling method divides the population into groups and then randomly selects entire groups for study?",
-        choice1: "Systematic sampling",
-        choice2: "Cluster sampling",
-        choice3: "Purposive sampling",
-        choice4: "Quota sampling",
-        answer: 2,
-        rationale: "Cluster sampling selects entire groups randomly instead of individual members, making it useful for large and geographically dispersed populations."
-    },
-    {
-        question: "Which of the following is a probability sampling method?",
-        choice1: "Purposive sampling",
-        choice2: "Convenience sampling",
-        choice3: "Quota sampling",
-        choice4: "Systematic sampling",
+        question: "What is a major criticism of the Biological School’s control mechanism?",
+        choice1: "It relies too heavily on religious morals",
+        choice2: "It does not consider individual will",
+        choice3: "It uses overly harsh punishments",
+        choice4: "It leads to discriminatory practices like eugenics",
         answer: 4,
-        rationale: "Systematic sampling is a probability sampling method where every nth element in a population is selected, ensuring some level of randomness."
+        rationale: "Biological theories have historically led to unethical policies based on heredity."
     },
     {
-        question: "What is the main advantage of probability sampling?",
-        choice1: "It allows for non-random participant selection",
-        choice2: "It increases the representativeness of the sample",
-        choice3: "It requires no statistical knowledge",
-        choice4: "It guarantees 100% accuracy",
+        question: "Which of the following best describes the Positivist approach to crime?",
+        choice1: "Crime is a result of rational calculation",
+        choice2: "Crime is determined by internal or external factors beyond the individual’s control",
+        choice3: "Crime is a spiritual failure",
+        choice4: "Crime is a result of poor decision-making",
         answer: 2,
-        rationale: "Probability sampling increases the likelihood of obtaining a representative sample, making generalization to the population more valid."
+        rationale: "Positivist criminology sees crime as influenced by forces beyond the person’s control."
+    },
+    {
+        question: "Sigmund Freud contributed to criminology through which concept?",
+        choice1: "Atavism",
+        choice2: "Free will",
+        choice3: "The unconscious mind",
+        choice4: "Social contract",
+        answer: 3,
+        rationale: "Freud believed that unconscious psychological conflicts drive criminal behavior."
+    },
+    {
+        question: "According to the Psychological School, criminal behavior is often a result of:",
+        choice1: "Social deprivation",
+        choice2: "Inherited physical traits",
+        choice3: "Mental illness or personality disorders",
+        choice4: "Poor parenting alone",
+        answer: 3,
+        rationale: "Psychological theories focus on abnormal mental states as causes of crime."
+    },
+    {
+        question: "How can psychological theories predict crime?",
+        choice1: "By measuring skull size",
+        choice2: "By assessing early childhood behavior and personality traits",
+        choice3: "By evaluating family income",
+        choice4: "By studying community traditions",
+        answer: 2,
+        rationale: "Early detection of abnormal behavior can signal future delinquency."
+    },
+    {
+        question: "A key control strategy in the psychological approach is:",
+        choice1: "Punitive justice",
+        choice2: "Biological testing",
+        choice3: "Therapy and behavioral correction",
+        choice4: "Mass surveillance",
+        answer: 3,
+        rationale: "Control mechanisms include psychotherapy, counseling, and behavior modification programs."
+    },
+    {
+        question: "Which of the following best describes the psychological view of crime?",
+        choice1: "It is caused by societal pressures",
+        choice2: "It is a result of defective mental processes",
+        choice3: "It is purely a rational choice",
+        choice4: "It is based on ancient biology",
+        answer: 2,
+        rationale: "Psychological theorists view crime as stemming from dysfunctional thinking or emotional states."
+    },
+    {
+        question: "Who is most associated with the concept of anomie in the sociological explanation of crime?",
+        choice1: "Karl Marx",
+        choice2: "Sigmund Freud",
+        choice3: "Emile Durkheim",
+        choice4: "Cesare Beccaria",
+        answer: 3,
+        rationale: "Durkheim developed the concept of anomie to describe normlessness in society."
+    },
+    {
+        question: "What does the term anomie describe?",
+        choice1: "A legal loophole",
+        choice2: "A society with shared values",
+        choice3: "A breakdown of social norms",
+        choice4: "A criminal personality",
+        answer: 3,
+        rationale: "Anomie refers to instability resulting from a breakdown in cultural norms."
+    },
+    {
+        question: "How does the Sociological School explain crime?",
+        choice1: "As a biological defect",
+        choice2: "As a failure of individual moral choice",
+        choice3: "As a product of social structure and inequality",
+        choice4: "As a result of religious decline",
+        answer: 3,
+        rationale: "Sociological theories view crime as shaped by environmental and systemic factors."
+    },
+    {
+        question: "One way to predict crime sociologically is by:",
+        choice1: "Assessing skin color",
+        choice2: "Studying economic inequality and urban conditions",
+        choice3: "Checking for tattoos",
+        choice4: "Testing IQ",
+        answer: 2,
+        rationale: "Prediction in sociological criminology is based on social factors like poverty and disorganization."
+    },
+    {
+        question: "According to sociologists, crime can be controlled through:",
+        choice1: "Capital punishment",
+        choice2: "Social reforms and community programs",
+        choice3: "Intense surveillance",
+        choice4: "Public shaming",
+        answer: 2,
+        rationale: "Sociological schools promote proactive social change to reduce crime."
+    },
+    {
+        question: "Who is a key figure in the Conflict School of Criminology?",
+        choice1: "Emile Durkheim",
+        choice2: "Karl Marx",
+        choice3: "Gabriel Tarde",
+        choice4: "Cesare Lombroso",
+        answer: 2,
+        rationale: "Karl Marx influenced conflict criminology by emphasizing power dynamics in lawmaking."
+    },
+    {
+        question: "What is the primary explanation for crime according to the Conflict School?",
+        choice1: "Biological inferiority",
+        choice2: "Unconscious desires",
+        choice3: "Social inequality and power struggle",
+        choice4: "Personal greed",
+        answer: 3,
+        rationale: "Conflict theorists believe crime arises from exploitation and class conflict."
+    },
+    {
+        question: "How does the Conflict School propose crime is described?",
+        choice1: "As acts of moral failure",
+        choice2: "As choices of free will",
+        choice3: "As a result of capitalist oppression",
+        choice4: "As individual faults",
+        answer: 3,
+        rationale: "They argue laws reflect the interests of the ruling class, not moral consensus."
+    },
+    {
+        question: "According to radical criminologists, crime is best controlled by:",
+        choice1: "Mass incarceration",
+        choice2: "Therapy",
+        choice3: "Abolishing class-based structures",
+        choice4: "Legal reform only",
+        answer: 3,
+        rationale: "Radical theorists call for systemic social change to eliminate the root causes of crime."
+    },
+    {
+        question: "What is a common predictive focus in Radical criminology?",
+        choice1: "Psychological profiles",
+        choice2: "Economic class and social conflict",
+        choice3: "Genetic makeup",
+        choice4: "Law enforcement patterns",
+        answer: 2,
+        rationale: "They predict crime rates by analyzing inequalities and political repression."
     }
 ];
-
 
 
 
